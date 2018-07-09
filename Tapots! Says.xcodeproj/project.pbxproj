@@ -12,6 +12,9 @@
 		50DE519320F3B3EA0068C914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519120F3B3EA0068C914 /* Main.storyboard */; };
 		50DE519520F3B3EB0068C914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519420F3B3EB0068C914 /* Assets.xcassets */; };
 		50DE519820F3B3EB0068C914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519620F3B3EB0068C914 /* LaunchScreen.storyboard */; };
+		50DE51A020F3B4C10068C914 /* GameElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE519F20F3B4C10068C914 /* GameElement.swift */; };
+		50DE51A220F3B6F60068C914 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51A120F3B6F60068C914 /* GameConstants.swift */; };
+		50DE51A420F3B8C20068C914 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51A320F3B8C10068C914 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		50DE519420F3B3EB0068C914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50DE519720F3B3EB0068C914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50DE519920F3B3EB0068C914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50DE519F20F3B4C10068C914 /* GameElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElement.swift; sourceTree = "<group>"; };
+		50DE51A120F3B6F60068C914 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		50DE51A320F3B8C10068C914 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				50DE519420F3B3EB0068C914 /* Assets.xcassets */,
 				50DE519620F3B3EB0068C914 /* LaunchScreen.storyboard */,
 				50DE519920F3B3EB0068C914 /* Info.plist */,
+				50DE519F20F3B4C10068C914 /* GameElement.swift */,
+				50DE51A120F3B6F60068C914 /* GameConstants.swift */,
+				50DE51A320F3B8C10068C914 /* Utils.swift */,
 			);
 			path = "Tapots! Says";
 			sourceTree = "<group>";
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DE51A420F3B8C20068C914 /* Utils.swift in Sources */,
 				50DE519020F3B3EA0068C914 /* ViewController.swift in Sources */,
+				50DE51A220F3B6F60068C914 /* GameConstants.swift in Sources */,
 				50DE518E20F3B3EA0068C914 /* AppDelegate.swift in Sources */,
+				50DE51A020F3B4C10068C914 /* GameElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

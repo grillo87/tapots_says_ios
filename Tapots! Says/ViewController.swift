@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        for _ in 1...10 {
+            print("Color \(Utils.randomInt())")
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
