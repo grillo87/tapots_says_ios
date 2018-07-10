@@ -22,7 +22,7 @@ class SplashViewController: BaseViewController {
         super.viewDidLoad()
 
         setLabelTitle()
-        drawGreenCircle()
+
         
     }
     
@@ -38,8 +38,6 @@ class SplashViewController: BaseViewController {
         setYellowCircle()
         setGreenCircle()
         
-        
-        
     }
     
     private func setBlueCircle() {
@@ -48,6 +46,8 @@ class SplashViewController: BaseViewController {
         BlueCircle.setStartAngle(startAngle: 0)
         BlueCircle.setEndAngle(endAngle: 25)
         BlueCircle.setQuaterPosition(quaterPosition: GameConstants.BLUE_VALUE)
+        
+        bounceBlueCircle()
     
     }
     
@@ -78,6 +78,85 @@ class SplashViewController: BaseViewController {
         
     }
     
+    private func bounceBlueCircle() {
+        
+        self.BlueCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.1,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.BlueCircle.transform = .identity
+            },
+                       completion: { _ in
+                        
+                        self.bounceRedCircle()
+                        
+        })
+        
+    }
+    
+    private func bounceRedCircle() {
+        
+        self.RedCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.1,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.RedCircle.transform = .identity
+            },
+                       completion: { _ in
+                        
+                        self.bounceGreenCircle()
+                        
+                        
+        })
+        
+    }
+    
+    
+    private func bounceGreenCircle() {
+        
+        self.GreenCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.1,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.GreenCircle.transform = .identity
+            },
+                       completion: { _ in
+                        
+                        self.bounceYellowCircle()
+                        
+                        
+        })
+        
+    }
+    
+    private func bounceYellowCircle() {
+        
+        self.YellowCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.1,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.YellowCircle.transform = .identity
+            },
+                       completion: { _ in
+                        
+                        self.bounceBlueCircle()
+                        
+                        
+        })
+        
+    }
     
     
     private func setLabelTitle() {
@@ -92,16 +171,6 @@ class SplashViewController: BaseViewController {
         titleString.addAttribute(NSAttributedStringKey.foregroundColor, value: Colors.white, range: NSRange(location:6,length:1))
        
         TitleNameLabel.attributedText = titleString
-        
-    }
-    
-    private func drawGreenCircle() {
-        /*
-        let layer = CAShapeLayer()
-        layer.path = UIBezierPath(roundedRect: CGRect(x: 64, y: 64, width: 160, height: 160), cornerRadius: 50).cgPath
-        layer.fillColor = UIColor.red.cgColor
-        view.layer.addSublayer(layer)
- */
         
     }
     
