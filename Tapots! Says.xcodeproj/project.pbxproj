@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14B0EE1E4657825C64386C41 /* Pods_Tapots__Says.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2907CEAC205E5EB7D3886FD /* Pods_Tapots__Says.framework */; };
 		50DE518E20F3B3EA0068C914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE518D20F3B3EA0068C914 /* AppDelegate.swift */; };
 		50DE519020F3B3EA0068C914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE518F20F3B3EA0068C914 /* ViewController.swift */; };
 		50DE519320F3B3EA0068C914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519120F3B3EA0068C914 /* Main.storyboard */; };
@@ -15,6 +16,12 @@
 		50DE51A020F3B4C10068C914 /* GameElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE519F20F3B4C10068C914 /* GameElement.swift */; };
 		50DE51A220F3B6F60068C914 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51A120F3B6F60068C914 /* GameConstants.swift */; };
 		50DE51A420F3B8C20068C914 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51A320F3B8C10068C914 /* Utils.swift */; };
+		50DE51A620F3E6280068C914 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51A520F3E6280068C914 /* Colors.swift */; };
+		50DE51A820F3E9460068C914 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51A720F3E9460068C914 /* BaseViewController.swift */; };
+		50DE51AA20F3EC700068C914 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51A920F3EC700068C914 /* SplashViewController.swift */; };
+		50DE51AD20F3FA260068C914 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519920F3B3EB0068C914 /* Info.plist */; };
+		50DE51B220F404CC0068C914 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50DE51B120F404CC0068C914 /* Pacifico.ttf */; };
+		50DE51B420F414DF0068C914 /* CircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51B320F414DF0068C914 /* CircleDrawer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,14 @@
 		50DE519F20F3B4C10068C914 /* GameElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElement.swift; sourceTree = "<group>"; };
 		50DE51A120F3B6F60068C914 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		50DE51A320F3B8C10068C914 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		50DE51A520F3E6280068C914 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		50DE51A720F3E9460068C914 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		50DE51A920F3EC700068C914 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		50DE51B120F404CC0068C914 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		50DE51B320F414DF0068C914 /* CircleDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDrawer.swift; sourceTree = "<group>"; };
+		959583A06E254CF1CB526846 /* Pods-Tapots! Says.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapots! Says.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tapots! Says/Pods-Tapots! Says.debug.xcconfig"; sourceTree = "<group>"; };
+		D2907CEAC205E5EB7D3886FD /* Pods_Tapots__Says.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tapots__Says.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7C2A6E8884D8917EFF3C847 /* Pods-Tapots! Says.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapots! Says.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tapots! Says/Pods-Tapots! Says.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +50,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B0EE1E4657825C64386C41 /* Pods_Tapots__Says.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43ED067E5E56F1568C5A16BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2907CEAC205E5EB7D3886FD /* Pods_Tapots__Says.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		50DE518120F3B3EA0068C914 = {
 			isa = PBXGroup;
 			children = (
+				50DE51B020F404A80068C914 /* Resources */,
 				50DE518C20F3B3EA0068C914 /* Tapots! Says */,
 				50DE518B20F3B3EA0068C914 /* Products */,
+				866C357D76F377062C48D852 /* Pods */,
+				43ED067E5E56F1568C5A16BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,15 +89,36 @@
 			children = (
 				50DE518D20F3B3EA0068C914 /* AppDelegate.swift */,
 				50DE518F20F3B3EA0068C914 /* ViewController.swift */,
-				50DE519120F3B3EA0068C914 /* Main.storyboard */,
+				50DE51A920F3EC700068C914 /* SplashViewController.swift */,
 				50DE519420F3B3EB0068C914 /* Assets.xcassets */,
 				50DE519620F3B3EB0068C914 /* LaunchScreen.storyboard */,
 				50DE519920F3B3EB0068C914 /* Info.plist */,
 				50DE519F20F3B4C10068C914 /* GameElement.swift */,
 				50DE51A120F3B6F60068C914 /* GameConstants.swift */,
 				50DE51A320F3B8C10068C914 /* Utils.swift */,
+				50DE51A520F3E6280068C914 /* Colors.swift */,
+				50DE51A720F3E9460068C914 /* BaseViewController.swift */,
+				50DE519120F3B3EA0068C914 /* Main.storyboard */,
+				50DE51B320F414DF0068C914 /* CircleDrawer.swift */,
 			);
 			path = "Tapots! Says";
+			sourceTree = "<group>";
+		};
+		50DE51B020F404A80068C914 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50DE51B120F404CC0068C914 /* Pacifico.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		866C357D76F377062C48D852 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				959583A06E254CF1CB526846 /* Pods-Tapots! Says.debug.xcconfig */,
+				F7C2A6E8884D8917EFF3C847 /* Pods-Tapots! Says.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50DE519C20F3B3EB0068C914 /* Build configuration list for PBXNativeTarget "Tapots! Says" */;
 			buildPhases = (
+				8EEA42F7BF7F5FF4375026DA /* [CP] Check Pods Manifest.lock */,
 				50DE518620F3B3EA0068C914 /* Sources */,
 				50DE518720F3B3EA0068C914 /* Frameworks */,
 				50DE518820F3B3EA0068C914 /* Resources */,
+				DC30BB2533841E88604AAF7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,12 +182,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DE519820F3B3EB0068C914 /* LaunchScreen.storyboard in Resources */,
+				50DE51B220F404CC0068C914 /* Pacifico.ttf in Resources */,
 				50DE519520F3B3EB0068C914 /* Assets.xcassets in Resources */,
 				50DE519320F3B3EA0068C914 /* Main.storyboard in Resources */,
+				50DE51AD20F3FA260068C914 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8EEA42F7BF7F5FF4375026DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tapots! Says-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC30BB2533841E88604AAF7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tapots! Says/Pods-Tapots! Says-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tapots! Says/Pods-Tapots! Says-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50DE518620F3B3EA0068C914 /* Sources */ = {
@@ -145,10 +236,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DE51A420F3B8C20068C914 /* Utils.swift in Sources */,
+				50DE51A620F3E6280068C914 /* Colors.swift in Sources */,
 				50DE519020F3B3EA0068C914 /* ViewController.swift in Sources */,
 				50DE51A220F3B6F60068C914 /* GameConstants.swift in Sources */,
 				50DE518E20F3B3EA0068C914 /* AppDelegate.swift in Sources */,
+				50DE51A820F3E9460068C914 /* BaseViewController.swift in Sources */,
+				50DE51B420F414DF0068C914 /* CircleDrawer.swift in Sources */,
 				50DE51A020F3B4C10068C914 /* GameElement.swift in Sources */,
+				50DE51AA20F3EC700068C914 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +385,7 @@
 		};
 		50DE519D20F3B3EB0068C914 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 959583A06E254CF1CB526846 /* Pods-Tapots! Says.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -308,6 +404,7 @@
 		};
 		50DE519E20F3B3EB0068C914 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7C2A6E8884D8917EFF3C847 /* Pods-Tapots! Says.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_Tapots__Says {
+  umbrella header "Pods-Tapots! Says-umbrella.h"
+
+  export *
+  module * { export * }
+}
