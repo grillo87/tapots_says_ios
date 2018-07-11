@@ -17,7 +17,17 @@ class OptionsViewController: BaseViewController {
     
     @IBOutlet weak var RedCircle: CircleDrawer!
     
+    @IBAction func TopPlayersSelected(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "TopPlayersSegue", sender: self)
+        
+    }
     
+    @IBAction func NewGameSelected(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "DifficultySegue", sender: self)
+        
+    }
     
     
     
@@ -30,6 +40,7 @@ class OptionsViewController: BaseViewController {
 
         TitleLabel.attributedText = Utils.getLabelTitle()
         setButtonBordersColors()
+        setNavigationBar()
         
         setBlueCircle()
         setRedCircle()
@@ -40,6 +51,16 @@ class OptionsViewController: BaseViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func setNavigationBar() {
+        
+        let navigationBarAppearace = UINavigationBar.appearance()
+        
+        navigationBarAppearace.tintColor = Colors.white
+        navigationBarAppearace.barTintColor = Colors.darkerBlue
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Colors.white]
+        
     }
     
 
