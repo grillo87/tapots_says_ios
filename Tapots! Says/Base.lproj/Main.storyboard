@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RcP-AI-ktC">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,8 +20,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tapots__Says" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menuuuuuu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnS-ix-dPh">
+                                <rect key="frame" x="89" y="274" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.28265809052294388" green="0.55602076608983397" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,64 +48,79 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Says" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfp-zw-h5G">
-                                <rect key="frame" x="154.66666666666666" y="160.33333333333334" width="66" height="35"/>
+                                <rect key="frame" x="102" y="122" width="116" height="35"/>
                                 <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="30"/>
                                 <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="TAPOTS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MG9-Hf-fa1">
-                                <rect key="frame" x="87" y="94" width="201" height="58.333333333333343"/>
+                                <rect key="frame" x="16" y="20" width="288" height="58.5"/>
                                 <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Ing José Grillo" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="156" translatesAutoresizingMaskIntoConstraints="NO" id="grR-VL-Zoo">
-                                <rect key="frame" x="219.66666666666663" y="707.33333333333337" width="139.33333333333337" height="52.666666666666629"/>
+                                <rect key="frame" x="168" y="407" width="139.5" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XrL-pM-9Yt" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
-                                <rect key="frame" x="46" y="150" width="115" height="75"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PS4-2q-Lii" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                <rect key="frame" x="57" y="165" width="103" height="96.5"/>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ymy-2s-aE4" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
-                                <rect key="frame" x="174" y="150" width="115" height="75"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbb-e5-nbq" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                <rect key="frame" x="57" y="274.5" width="103" height="96.5"/>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FK0-w6-Pbd" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
-                                <rect key="frame" x="46" y="324" width="115" height="75"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kz-Qh-wrm" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                <rect key="frame" x="168" y="274.5" width="103" height="96.5"/>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4n-Sz-nDm" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
-                                <rect key="frame" x="174" y="324" width="115" height="75"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efB-rg-3U8" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                <rect key="frame" x="168" y="165" width="103" height="96.5"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.20368022129999999" green="0.38682969090000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="MG9-Hf-fa1" firstAttribute="top" secondItem="orE-Lx-HN6" secondAttribute="top" constant="50" id="0sr-sl-86o"/>
-                            <constraint firstItem="grR-VL-Zoo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="L1G-qY-oy8" secondAttribute="leading" constant="20" symbolic="YES" id="CGp-t4-JtV"/>
-                            <constraint firstItem="orE-Lx-HN6" firstAttribute="bottom" secondItem="grR-VL-Zoo" secondAttribute="bottom" constant="18" id="TGg-lT-eBS"/>
-                            <constraint firstItem="Vfp-zw-h5G" firstAttribute="top" secondItem="MG9-Hf-fa1" secondAttribute="bottom" constant="8.5" id="U1m-dd-OSc"/>
-                            <constraint firstItem="orE-Lx-HN6" firstAttribute="trailing" secondItem="grR-VL-Zoo" secondAttribute="trailing" constant="16" id="dzc-zK-wKI"/>
-                            <constraint firstItem="MG9-Hf-fa1" firstAttribute="centerX" secondItem="orE-Lx-HN6" secondAttribute="centerX" id="sqa-yK-UeM"/>
-                            <constraint firstItem="Vfp-zw-h5G" firstAttribute="centerX" secondItem="orE-Lx-HN6" secondAttribute="centerX" id="zaG-vK-5gV"/>
+                            <constraint firstItem="Nbb-e5-nbq" firstAttribute="leading" secondItem="orE-Lx-HN6" secondAttribute="leading" constant="57" id="0eI-Nw-A0I"/>
+                            <constraint firstItem="orE-Lx-HN6" firstAttribute="bottom" secondItem="grR-VL-Zoo" secondAttribute="bottom" constant="20" id="3pz-Si-UsK"/>
+                            <constraint firstItem="orE-Lx-HN6" firstAttribute="trailing" secondItem="MG9-Hf-fa1" secondAttribute="trailing" constant="16" id="4Ta-ZY-W5a"/>
+                            <constraint firstItem="9kz-Qh-wrm" firstAttribute="leading" secondItem="Nbb-e5-nbq" secondAttribute="trailing" constant="8" id="7tM-YT-hc6"/>
+                            <constraint firstItem="grR-VL-Zoo" firstAttribute="top" secondItem="9kz-Qh-wrm" secondAttribute="bottom" constant="36" id="9Vf-QV-KKs"/>
+                            <constraint firstItem="orE-Lx-HN6" firstAttribute="trailing" secondItem="Vfp-zw-h5G" secondAttribute="trailing" constant="102" id="A8W-Dm-mkc"/>
+                            <constraint firstItem="Vfp-zw-h5G" firstAttribute="top" secondItem="orE-Lx-HN6" secondAttribute="top" constant="102" id="ALj-Gm-gUA"/>
+                            <constraint firstItem="9kz-Qh-wrm" firstAttribute="top" secondItem="efB-rg-3U8" secondAttribute="bottom" constant="13" id="AOJ-SS-7uY"/>
+                            <constraint firstItem="orE-Lx-HN6" firstAttribute="bottom" secondItem="Nbb-e5-nbq" secondAttribute="bottom" constant="109" id="HU3-9k-189"/>
+                            <constraint firstItem="Nbb-e5-nbq" firstAttribute="top" secondItem="PS4-2q-Lii" secondAttribute="bottom" constant="13" id="If7-CB-VMo"/>
+                            <constraint firstItem="MG9-Hf-fa1" firstAttribute="leading" secondItem="orE-Lx-HN6" secondAttribute="leading" constant="16" id="Lxy-dI-1hi"/>
+                            <constraint firstItem="orE-Lx-HN6" firstAttribute="trailing" secondItem="9kz-Qh-wrm" secondAttribute="trailing" constant="49" id="MfR-BI-SBV"/>
+                            <constraint firstItem="orE-Lx-HN6" firstAttribute="trailing" secondItem="grR-VL-Zoo" secondAttribute="trailing" constant="12.5" id="N06-Ig-6Bj"/>
+                            <constraint firstItem="efB-rg-3U8" firstAttribute="height" secondItem="9kz-Qh-wrm" secondAttribute="height" id="OOI-aC-O5m"/>
+                            <constraint firstItem="efB-rg-3U8" firstAttribute="leading" secondItem="PS4-2q-Lii" secondAttribute="trailing" constant="8" id="SgM-j0-O2j"/>
+                            <constraint firstItem="PS4-2q-Lii" firstAttribute="height" secondItem="Nbb-e5-nbq" secondAttribute="height" id="V5s-XP-kyX"/>
+                            <constraint firstItem="PS4-2q-Lii" firstAttribute="width" secondItem="efB-rg-3U8" secondAttribute="width" id="VVT-zB-p5W"/>
+                            <constraint firstItem="Vfp-zw-h5G" firstAttribute="centerX" secondItem="MG9-Hf-fa1" secondAttribute="centerX" id="Xhl-I1-RLG"/>
+                            <constraint firstItem="MG9-Hf-fa1" firstAttribute="top" secondItem="orE-Lx-HN6" secondAttribute="top" id="YYC-i0-w2r"/>
+                            <constraint firstItem="Nbb-e5-nbq" firstAttribute="width" secondItem="9kz-Qh-wrm" secondAttribute="width" id="eS0-i0-Il9"/>
+                            <constraint firstItem="PS4-2q-Lii" firstAttribute="top" secondItem="Vfp-zw-h5G" secondAttribute="bottom" constant="8" id="h7i-yr-Mqn"/>
+                            <constraint firstItem="orE-Lx-HN6" firstAttribute="trailing" secondItem="efB-rg-3U8" secondAttribute="trailing" constant="49" id="jzY-Ym-KfL"/>
+                            <constraint firstItem="efB-rg-3U8" firstAttribute="top" secondItem="Vfp-zw-h5G" secondAttribute="bottom" constant="8" id="k94-kP-fFW"/>
+                            <constraint firstItem="Vfp-zw-h5G" firstAttribute="leading" secondItem="orE-Lx-HN6" secondAttribute="leading" constant="102" id="uD3-eq-8h5"/>
+                            <constraint firstItem="PS4-2q-Lii" firstAttribute="leading" secondItem="orE-Lx-HN6" secondAttribute="leading" constant="57" id="wVR-hz-tji"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="orE-Lx-HN6"/>
                     </view>
                     <connections>
-                        <outlet property="BlueCircle" destination="XrL-pM-9Yt" id="qGX-Xs-XUA"/>
-                        <outlet property="GreenCircle" destination="x4n-Sz-nDm" id="Tip-5p-aFq"/>
-                        <outlet property="RedCircle" destination="Ymy-2s-aE4" id="cZ3-Xk-IH7"/>
+                        <outlet property="BlueCircle" destination="PS4-2q-Lii" id="4jo-0e-vS3"/>
+                        <outlet property="GreenCircle" destination="Nbb-e5-nbq" id="qNt-WZ-jUN"/>
+                        <outlet property="RedCircle" destination="efB-rg-3U8" id="hwd-7z-MDD"/>
                         <outlet property="SaysLabel" destination="Vfp-zw-h5G" id="v3M-x0-p3g"/>
                         <outlet property="TitleNameLabel" destination="MG9-Hf-fa1" id="xca-UL-ocu"/>
-                        <outlet property="YellowCircle" destination="FK0-w6-Pbd" id="DP0-km-Ixl"/>
+                        <outlet property="YellowCircle" destination="9kz-Qh-wrm" id="e86-H1-HE8"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="MenuSegue" id="yrh-8t-SwL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gno-ax-Dv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540" y="105"/>
+            <point key="canvasLocation" x="540" y="103.75"/>
         </scene>
     </scenes>
 </document>

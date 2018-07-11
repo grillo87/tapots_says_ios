@@ -14,9 +14,11 @@ class SplashViewController: BaseViewController {
     @IBOutlet weak var SaysLabel: UILabel!
     
     @IBOutlet weak var BlueCircle: CircleDrawer!
+    @IBOutlet weak var RedCircle: CircleDrawer!
     @IBOutlet weak var GreenCircle: CircleDrawer!
     @IBOutlet weak var YellowCircle: CircleDrawer!
-    @IBOutlet weak var RedCircle: CircleDrawer!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,7 @@ class SplashViewController: BaseViewController {
         setRedCircle()
         setYellowCircle()
         setGreenCircle()
+ 
         
     }
     
@@ -60,23 +63,25 @@ class SplashViewController: BaseViewController {
     
     }
     
+    private func setYellowCircle() {
+        
+        YellowCircle.setBackground(background: Colors.yellowDoots)
+        YellowCircle.setStartAngle(startAngle: 50)
+        YellowCircle.setEndAngle(endAngle: 75)
+        YellowCircle.setQuaterPosition(quaterPosition:GameConstants.YELLOW_VALUE)
+        
+    }
+    
     private func setGreenCircle() {
         
         GreenCircle.setBackground(background: Colors.greenDoots)
-        GreenCircle.setStartAngle(startAngle: 50)
-        GreenCircle.setEndAngle(endAngle: 75)
+        GreenCircle.setStartAngle(startAngle: 75)
+        GreenCircle.setEndAngle(endAngle: 100)
         GreenCircle.setQuaterPosition(quaterPosition:GameConstants.GREEN_VALUE)
         
     }
     
-    private func setYellowCircle() {
     
-        YellowCircle.setBackground(background: Colors.yellowDoots)
-        YellowCircle.setStartAngle(startAngle: 75)
-        YellowCircle.setEndAngle(endAngle: 100)
-        YellowCircle.setQuaterPosition(quaterPosition:GameConstants.YELLOW_VALUE)
-        
-    }
     
     private func bounceBlueCircle() {
         
@@ -110,7 +115,7 @@ class SplashViewController: BaseViewController {
             },
                        completion: { _ in
                         
-                        self.bounceGreenCircle()
+                        self.bounceYellowCircle()
                         
                         
         })
@@ -131,7 +136,7 @@ class SplashViewController: BaseViewController {
             },
                        completion: { _ in
                         
-                        self.bounceYellowCircle()
+                        self.bounceBlueCircle()
                         
                         
         })
@@ -151,13 +156,14 @@ class SplashViewController: BaseViewController {
             },
                        completion: { _ in
                         
-                        self.bounceBlueCircle()
+                        self.bounceGreenCircle()
+                        
+                        //self.performSegue(withIdentifier: "MenuSegue", sender: self)
                         
                         
         })
         
     }
-    
     
     private func setLabelTitle() {
         

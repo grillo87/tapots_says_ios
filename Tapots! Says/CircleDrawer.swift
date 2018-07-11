@@ -75,10 +75,10 @@ public class CircleDrawer: UIView {
         case GameConstants.RED_VALUE:
             center = CGPoint(x: rect.origin.x , y: rect.origin.y + rect.height)
             
-        case GameConstants.GREEN_VALUE:
+        case GameConstants.YELLOW_VALUE:
             center = CGPoint(x: rect.origin.x, y: rect.origin.y)
             
-        case GameConstants.YELLOW_VALUE:
+        case GameConstants.GREEN_VALUE:
             center = CGPoint(x: rect.origin.x + rect.width, y: rect.origin.y)
         
         default:
