@@ -18,4 +18,20 @@ public class Utils {
     }
     
     
+    public static func getLabelTitle() -> NSMutableAttributedString {
+        
+        let titleString = NSMutableAttributedString(string: "TAPOTS!")
+        titleString.addAttribute(NSAttributedStringKey.foregroundColor, value: Colors.blueDoots, range: NSRange(location:0,length:1))
+        titleString.addAttribute(NSAttributedStringKey.foregroundColor, value: Colors.redDoots, range: NSRange(location:1,length:1))
+        titleString.addAttribute(NSAttributedStringKey.foregroundColor, value: Colors.orangeDoots, range: NSRange(location:2,length:1))
+        titleString.addAttribute(NSAttributedStringKey.foregroundColor, value: Colors.yellowDoots, range: NSRange(location:3,length:1))
+        titleString.addAttribute(NSAttributedStringKey.foregroundColor, value: Colors.purpleDoots, range: NSRange(location:4,length:1))
+        titleString.addAttribute(NSAttributedStringKey.foregroundColor, value: Colors.greenDoots, range: NSRange(location:5,length:1))
+        titleString.addAttribute(NSAttributedStringKey.foregroundColor, value: Colors.white, range: NSRange(location:6,length:1))
+        
+        return titleString
+        
+    }
+    
+    
 }

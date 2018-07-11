@@ -1,66 +1,74 @@
 //
-//  SplashViewController.swift
+//  OptionsViewController.swift
 //  Tapots! Says
 //
-//  Created by José Grillo on 9/7/18.
+//  Created by José Grillo on 11/7/18.
 //  Copyright © 2018 José Grillo. All rights reserved.
 //
 
 import UIKit
 
-class SplashViewController: BaseViewController {
+class OptionsViewController: BaseViewController {
 
-    @IBOutlet weak var TitleNameLabel: UILabel!
-    @IBOutlet weak var SaysLabel: UILabel!
-    
     @IBOutlet weak var BlueCircle: CircleDrawer!
-    @IBOutlet weak var RedCircle: CircleDrawer!
+    
     @IBOutlet weak var GreenCircle: CircleDrawer!
     @IBOutlet weak var YellowCircle: CircleDrawer!
     
-
+    @IBOutlet weak var RedCircle: CircleDrawer!
+    
+    
+    
+    
+    
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var NewGameButton: UIButton!
+    @IBOutlet weak var TopPlayersButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        TitleNameLabel.attributedText = Utils.getLabelTitle()
-
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewDidAppear(false)
-        
-        TitleNameLabel.fadeIn()
-        SaysLabel.fadeIn()
+        TitleLabel.attributedText = Utils.getLabelTitle()
+        setButtonBordersColors()
         
         setBlueCircle()
         setRedCircle()
         setYellowCircle()
         setGreenCircle()
- 
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+
+    private func setButtonBordersColors(){
+        
+        NewGameButton.layer.borderColor = Colors.white.cgColor
+        TopPlayersButton.layer.borderColor = Colors.white.cgColor
         
     }
     
-    private func setBlueCircle() {
     
+    private func setBlueCircle() {
+        
         BlueCircle.setBackground(background: Colors.blueDoots)
         BlueCircle.setStartAngle(startAngle: 0)
         BlueCircle.setEndAngle(endAngle: 25)
         BlueCircle.setQuaterPosition(quaterPosition: GameConstants.BLUE_VALUE)
         
         bounceBlueCircle()
-    
+        
     }
     
     private func setRedCircle() {
-    
+        
         RedCircle.setBackground(background: Colors.redDoots)
         RedCircle.setStartAngle(startAngle: 25)
         RedCircle.setEndAngle(endAngle: 50)
         RedCircle.setQuaterPosition(quaterPosition:GameConstants.RED_VALUE)
-    
+        
     }
     
     private func setYellowCircle() {
@@ -137,7 +145,6 @@ class SplashViewController: BaseViewController {
                        completion: { _ in
                         
                         self.bounceBlueCircle()
-                        self.performSegue(withIdentifier: "MenuSegue", sender: self)
                         
                         
         })
@@ -163,14 +170,5 @@ class SplashViewController: BaseViewController {
         })
         
     }
-    
 
-}
-
-extension UIView {
-    
-    func fadeIn(_ duration: TimeInterval = 3.0, delay: TimeInterval = 0.0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
-            self.alpha = 1.0
-        }, completion: completion)  }
 }

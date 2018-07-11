@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		14B0EE1E4657825C64386C41 /* Pods_Tapots__Says.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2907CEAC205E5EB7D3886FD /* Pods_Tapots__Says.framework */; };
 		50DE518E20F3B3EA0068C914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE518D20F3B3EA0068C914 /* AppDelegate.swift */; };
-		50DE519020F3B3EA0068C914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE518F20F3B3EA0068C914 /* ViewController.swift */; };
 		50DE519320F3B3EA0068C914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519120F3B3EA0068C914 /* Main.storyboard */; };
 		50DE519520F3B3EB0068C914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519420F3B3EB0068C914 /* Assets.xcassets */; };
 		50DE519820F3B3EB0068C914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519620F3B3EB0068C914 /* LaunchScreen.storyboard */; };
@@ -22,12 +21,13 @@
 		50DE51AD20F3FA260068C914 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519920F3B3EB0068C914 /* Info.plist */; };
 		50DE51B220F404CC0068C914 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50DE51B120F404CC0068C914 /* Pacifico.ttf */; };
 		50DE51B420F414DF0068C914 /* CircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE51B320F414DF0068C914 /* CircleDrawer.swift */; };
+		50EFCEF320F64052008952A3 /* ButtonMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFCEF220F64052008952A3 /* ButtonMenu.swift */; };
+		50EFCEFF20F643A2008952A3 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFCEFE20F643A2008952A3 /* OptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50DE518A20F3B3EA0068C914 /* Tapots! Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tapots! Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DE518D20F3B3EA0068C914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50DE518F20F3B3EA0068C914 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50DE519220F3B3EA0068C914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50DE519420F3B3EB0068C914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50DE519720F3B3EB0068C914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +40,8 @@
 		50DE51A920F3EC700068C914 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		50DE51B120F404CC0068C914 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		50DE51B320F414DF0068C914 /* CircleDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleDrawer.swift; sourceTree = "<group>"; };
+		50EFCEF220F64052008952A3 /* ButtonMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenu.swift; sourceTree = "<group>"; };
+		50EFCEFE20F643A2008952A3 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		959583A06E254CF1CB526846 /* Pods-Tapots! Says.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapots! Says.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tapots! Says/Pods-Tapots! Says.debug.xcconfig"; sourceTree = "<group>"; };
 		D2907CEAC205E5EB7D3886FD /* Pods_Tapots__Says.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tapots__Says.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C2A6E8884D8917EFF3C847 /* Pods-Tapots! Says.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tapots! Says.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tapots! Says/Pods-Tapots! Says.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				50DE51B020F404A80068C914 /* Resources */,
 				50DE518C20F3B3EA0068C914 /* Tapots! Says */,
 				50DE518B20F3B3EA0068C914 /* Products */,
+				50EFCEF220F64052008952A3 /* ButtonMenu.swift */,
 				866C357D76F377062C48D852 /* Pods */,
 				43ED067E5E56F1568C5A16BE /* Frameworks */,
 			);
@@ -88,8 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				50DE518D20F3B3EA0068C914 /* AppDelegate.swift */,
-				50DE518F20F3B3EA0068C914 /* ViewController.swift */,
 				50DE51A920F3EC700068C914 /* SplashViewController.swift */,
+				50EFCEFE20F643A2008952A3 /* OptionsViewController.swift */,
 				50DE519420F3B3EB0068C914 /* Assets.xcassets */,
 				50DE519620F3B3EB0068C914 /* LaunchScreen.storyboard */,
 				50DE519920F3B3EB0068C914 /* Info.plist */,
@@ -237,12 +240,13 @@
 			files = (
 				50DE51A420F3B8C20068C914 /* Utils.swift in Sources */,
 				50DE51A620F3E6280068C914 /* Colors.swift in Sources */,
-				50DE519020F3B3EA0068C914 /* ViewController.swift in Sources */,
 				50DE51A220F3B6F60068C914 /* GameConstants.swift in Sources */,
 				50DE518E20F3B3EA0068C914 /* AppDelegate.swift in Sources */,
 				50DE51A820F3E9460068C914 /* BaseViewController.swift in Sources */,
 				50DE51B420F414DF0068C914 /* CircleDrawer.swift in Sources */,
+				50EFCEFF20F643A2008952A3 /* OptionsViewController.swift in Sources */,
 				50DE51A020F3B4C10068C914 /* GameElement.swift in Sources */,
+				50EFCEF320F64052008952A3 /* ButtonMenu.swift in Sources */,
 				50DE51AA20F3EC700068C914 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +395,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63672NF67K;
 				INFOPLIST_FILE = "Tapots! Says/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "freelance.ingjosegrillo.Tapots--Says";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -407,7 +414,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63672NF67K;
 				INFOPLIST_FILE = "Tapots! Says/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "freelance.ingjosegrillo.Tapots--Says";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
