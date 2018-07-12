@@ -11,9 +11,60 @@ import UIKit
 class GameModeViewController: BaseViewController {
 
     
+    @IBOutlet weak var TitleLabel: UILabel!
+    
+    @IBOutlet weak var BlueCircle: CircleDrawer!
+    
+    @IBOutlet weak var YellowCircle: CircleDrawer!
+    
+    @IBOutlet weak var GreenCircle: CircleDrawer!
+    
+    @IBOutlet weak var RedCircle: CircleDrawer!
+    
+    
+    @IBOutlet weak var NormalGameButton: UIButton!
+    
+    @IBOutlet weak var InverseGameButton: UIButton!
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let gameViewController = segue.destination as? GameViewController {
+                
+                if let buttonSender = sender as? UIButton {
+                    
+                    if buttonSender.tag == NormalGameButton.tag {
+                        
+                        gameViewController.gameMode = GameConstants.NORMAL_MODE
+                        
+                        
+                    } else {
+                        
+                        gameViewController.gameMode = GameConstants.REVERSE_MODE
+                        
+                    }
+                
+                }
+                
+            
+        }
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        TitleLabel.attributedText = Utils.getLabelTitle()
+        setButtonBordersColors()
+        setNavigationBar()
+        
+        setBlueCircle()
+        setRedCircle()
+        setYellowCircle()
+        setGreenCircle()
 
         
         
@@ -24,15 +75,143 @@ class GameModeViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setNavigationBar() {
+        
+        let navigationBarAppearace = UINavigationBar.appearance()
+        
+        navigationBarAppearace.tintColor = Colors.white
+        navigationBarAppearace.barTintColor = Colors.darkerBlue
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Colors.white]
+        
     }
-    */
+    
+    
+    private func setButtonBordersColors(){
+        
+        NormalGameButton.layer.borderColor = Colors.white.cgColor
+        InverseGameButton.layer.borderColor = Colors.white.cgColor
+        
+    }
+    
+    
+    private func setBlueCircle() {
+        
+        BlueCircle.setBackground(background: Colors.blueDoots)
+        BlueCircle.setStartAngle(startAngle: 0)
+        BlueCircle.setEndAngle(endAngle: 25)
+        BlueCircle.setQuaterPosition(quaterPosition: GameConstants.BLUE_VALUE)
+        
+        bounceBlueCircle()
+        
+    }
+    
+    private func setRedCircle() {
+        
+        RedCircle.setBackground(background: Colors.redDoots)
+        RedCircle.setStartAngle(startAngle: 25)
+        RedCircle.setEndAngle(endAngle: 50)
+        RedCircle.setQuaterPosition(quaterPosition:GameConstants.RED_VALUE)
+        
+    }
+    
+    private func setYellowCircle() {
+        
+        YellowCircle.setBackground(background: Colors.yellowDoots)
+        YellowCircle.setStartAngle(startAngle: 50)
+        YellowCircle.setEndAngle(endAngle: 75)
+        YellowCircle.setQuaterPosition(quaterPosition:GameConstants.YELLOW_VALUE)
+        
+    }
+    
+    private func setGreenCircle() {
+        
+        GreenCircle.setBackground(background: Colors.greenDoots)
+        GreenCircle.setStartAngle(startAngle: 75)
+        GreenCircle.setEndAngle(endAngle: 100)
+        GreenCircle.setQuaterPosition(quaterPosition:GameConstants.GREEN_VALUE)
+        
+    }
+    
+    
+    
+    private func bounceBlueCircle() {
+        
+        self.BlueCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.1,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.BlueCircle.transform = .identity
+            },
+                       completion: { _ in
+                        
+                        self.bounceRedCircle()
+                        
+        })
+        
+    }
+    
+    private func bounceRedCircle() {
+        
+        self.RedCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.1,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.RedCircle.transform = .identity
+            },
+                       completion: { _ in
+                        
+                        self.bounceYellowCircle()
+                        
+                        
+        })
+        
+    }
+    
+    
+    private func bounceGreenCircle() {
+        
+        self.GreenCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.1,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.GreenCircle.transform = .identity
+            },
+                       completion: { _ in
+                        
+                        self.bounceBlueCircle()
+                        
+                        
+        })
+        
+    }
+    
+    private func bounceYellowCircle() {
+        
+        self.YellowCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0.1,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.YellowCircle.transform = .identity
+            },
+                       completion: { _ in
+                        
+                        self.bounceGreenCircle()
+                        
+                        
+        })
+        
+    }
 
 }

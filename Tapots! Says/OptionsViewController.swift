@@ -25,7 +25,7 @@ class OptionsViewController: BaseViewController {
     
     @IBAction func NewGameSelected(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier: "DifficultySegue", sender: self)
+        self.performSegue(withIdentifier: "GameModeSegue", sender: self)
         
     }
     
