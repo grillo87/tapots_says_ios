@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Alamofire
+import CodableAlamofire
 
 class TopPlayersViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        getTopPlayers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +23,27 @@ class TopPlayersViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func getTopPlayers() {
+        
+        let decoder = JSONDecoder()
+        Alamofire.request("http://private-b31630-tapotssays.apiary-mock.com/topPlayers").responseDecodableObject(decoder: decoder) { (response: DataResponse<[Players]>) in
+            let players = response.result.value
+            if (players != nil) {
+                
+                let sortedPlayers = Utils.sortPlayers(players: players!)
+                for player in sortedPlayers {
+                    print("player \(player.name), score \(player.score)")
+                }
+                
+            } else {
+                
+                print("Error Web Service!")
+                
+            }
+            
+        }
+        
+        
     }
-    */
 
 }

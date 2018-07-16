@@ -34,4 +34,12 @@ public class Utils {
     }
     
     
+    public static func sortPlayers(players: [Players]) -> [Players] {
+    
+        let sortedPlayers = players.sorted { (firstValue, secondValue) in return firstValue.score < secondValue.score }
+        return sortedPlayers
+        
+    }
+    
+    
 }
