@@ -6,6 +6,7 @@ target 'Tapots! Says' do
   	pod 'ChameleonFramework/Swift'
     pod 'Alamofire', '~> 4.7'
     pod 'CodableAlamofire'
+    pod 'SDWebImage', '~> 4.0'
 
 	use_frameworks!
 

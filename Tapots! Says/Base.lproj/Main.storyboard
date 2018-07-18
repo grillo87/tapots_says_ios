@@ -253,16 +253,16 @@
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXV-kM-TBX">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
-                                    <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q33-ba-kgt" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q33-ba-kgt" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
                                         <rect key="frame" x="8" y="80" width="100" height="102"/>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-Fr-MYf" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-Fr-MYf" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
                                         <rect key="frame" x="200" y="247" width="100" height="113"/>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqK-dY-v2j" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqK-dY-v2j" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
                                         <rect key="frame" x="202" y="140" width="100" height="105"/>
                                     </view>
-                                    <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aE-IE-vaB" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aE-IE-vaB" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
                                         <rect key="frame" x="54" y="313" width="100" height="17"/>
                                     </view>
                                     <view opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcp-3f-9B3">
@@ -296,24 +296,65 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nxj-lY-lwf">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nxj-lY-lwf">
                                 <rect key="frame" x="16" y="128" width="288" height="332"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lie-6t-PqJ">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="288" height="104"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZgM-pz-fL7">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopPlayersCollectionView" id="ZgM-pz-fL7" customClass="TopPlayerCollectionViewCell" customModule="Tapots__Says" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mqa-6F-dpl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="104"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDE-ce-ICa">
+                                                    <rect key="frame" x="114" y="8" width="164" height="56"/>
+                                                    <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="30"/>
+                                                    <color key="textColor" red="0.20368022129999999" green="0.38682969090000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6Z-c6-CKE">
+                                                    <rect key="frame" x="116" y="56" width="162" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.8901960784313725" green="0.54509803921568623" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="L6Z-c6-CKE" firstAttribute="leading" secondItem="ZgM-pz-fL7" secondAttribute="leading" constant="116" id="0DX-ze-JHt"/>
+                                            <constraint firstAttribute="bottom" secondItem="L6Z-c6-CKE" secondAttribute="bottom" id="Bid-qX-nw7"/>
+                                            <constraint firstItem="PDE-ce-ICa" firstAttribute="leading" secondItem="ZgM-pz-fL7" secondAttribute="leading" constant="114" id="GGo-Oc-5Ds"/>
+                                            <constraint firstAttribute="trailing" secondItem="L6Z-c6-CKE" secondAttribute="trailing" constant="10" id="Gta-AF-iXM"/>
+                                            <constraint firstAttribute="trailing" secondItem="PDE-ce-ICa" secondAttribute="trailing" constant="10" id="N39-l3-W20"/>
+                                            <constraint firstItem="L6Z-c6-CKE" firstAttribute="top" secondItem="PDE-ce-ICa" secondAttribute="bottom" constant="-8" id="NMA-GQ-vdU"/>
+                                            <constraint firstItem="mqa-6F-dpl" firstAttribute="top" secondItem="ZgM-pz-fL7" secondAttribute="top" id="NVG-oC-gkz"/>
+                                            <constraint firstAttribute="bottom" secondItem="mqa-6F-dpl" secondAttribute="bottom" id="W46-x8-oY8"/>
+                                            <constraint firstItem="mqa-6F-dpl" firstAttribute="leading" secondItem="ZgM-pz-fL7" secondAttribute="leading" id="sY8-ZJ-CLa"/>
+                                            <constraint firstAttribute="bottom" secondItem="PDE-ce-ICa" secondAttribute="bottom" constant="40" id="snR-Pa-JOZ"/>
+                                            <constraint firstItem="PDE-ce-ICa" firstAttribute="top" secondItem="ZgM-pz-fL7" secondAttribute="top" constant="8" id="tdz-2z-OYc"/>
+                                            <constraint firstAttribute="trailing" secondItem="mqa-6F-dpl" secondAttribute="trailing" constant="180" id="wGr-fK-cUQ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="PlayerAvatar" destination="mqa-6F-dpl" id="207-1z-V4S"/>
+                                            <outlet property="PlayerName" destination="PDE-ce-ICa" id="YoS-Gc-epA"/>
+                                            <outlet property="PlayerScore" destination="L6Z-c6-CKE" id="9Mw-oE-029"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xxi-1p-ZDj" id="CvP-qc-RQO"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -341,6 +382,7 @@
                         <outlet property="BlueCircle" destination="q33-ba-kgt" id="cSX-Bi-z5s"/>
                         <outlet property="GreenCircle" destination="fqK-dY-v2j" id="d5l-4p-Tfi"/>
                         <outlet property="RedCircle" destination="5aE-IE-vaB" id="Os1-tu-3LH"/>
+                        <outlet property="TopPlayersCollectionView" destination="nxj-lY-lwf" id="YM0-0z-RFU"/>
                         <outlet property="YellowCircle" destination="Ifh-Fr-MYf" id="GEi-wB-z2h"/>
                     </connections>
                 </viewController>

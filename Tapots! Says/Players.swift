@@ -9,6 +9,7 @@
 import Foundation
 public struct Players:Codable {
     
+    public let avatar: String
     public let name: String
     public let score: Int
     

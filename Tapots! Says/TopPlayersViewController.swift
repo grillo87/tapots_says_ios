@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 import CodableAlamofire
 
-class TopPlayersViewController: BaseViewController {
-
+class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
     @IBOutlet weak var BlueCircle: CircleDrawer!
     
     @IBOutlet weak var YellowCircle: CircleDrawer!
@@ -20,8 +21,15 @@ class TopPlayersViewController: BaseViewController {
     
     @IBOutlet weak var RedCircle: CircleDrawer!
     
+    @IBOutlet weak var TopPlayersCollectionView: UICollectionView!
+    
+    private var sortedPlayers: [Players] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         getTopPlayers()
         setBlueCircle()
@@ -42,10 +50,9 @@ class TopPlayersViewController: BaseViewController {
             let players = response.result.value
             if (players != nil) {
                 
-                let sortedPlayers = Utils.sortPlayers(players: players!)
-                for player in sortedPlayers {
-                    print("player \(player.name), score \(player.score)")
-                }
+                self.sortedPlayers = Utils.sortPlayers(players: players!)
+                self.TopPlayersCollectionView.reloadSections(IndexSet(integer: 0))
+                
                 
             } else {
                 
@@ -176,6 +183,22 @@ class TopPlayersViewController: BaseViewController {
                         
                         
         })
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.sortedPlayers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopPlayersCollectionView", for: indexPath) as! TopPlayerCollectionViewCell
+        
+        let player = sortedPlayers[indexPath.row]
+        collectionViewCell.displayData(PlayerAvatar: player.avatar, PlayerName: player.name, PlayerScore: player.score)
+        
+        return collectionViewCell
+        
         
     }
     
