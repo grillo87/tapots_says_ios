@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class Utils {
     
@@ -38,6 +39,34 @@ public class Utils {
     
         let sortedPlayers = players.sorted { (firstValue, secondValue) in return firstValue.score < secondValue.score }
         return sortedPlayers
+        
+    }
+    
+    
+    static func showLoadingDialog(viewController : BaseViewController, message : String) -> LoadingViewController {
+        
+        let loadingDialog = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loadingViewControllerId") as! LoadingViewController
+        viewController.addChildViewController(loadingDialog)
+        loadingDialog.view.frame = viewController.view.frame
+        viewController.view.addSubview(loadingDialog.view)
+        loadingDialog.didMove(toParentViewController: viewController)
+        loadingDialog.setLabelText(text: message)
+        
+        return loadingDialog
+        
+    }
+    
+    
+    static func showAlertDialog(viewController : BaseViewController, message : String) -> AlertViewController {
+        
+        let alertDialog = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "alertViewControllerId") as! AlertViewController
+        viewController.addChildViewController(alertDialog)
+        alertDialog.view.frame = viewController.view.frame
+        viewController.view.addSubview(alertDialog.view)
+        alertDialog.didMove(toParentViewController: viewController)
+        alertDialog.setLabelText(text: message)
+        
+        return alertDialog
         
     }
     

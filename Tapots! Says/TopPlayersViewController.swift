@@ -14,14 +14,12 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
     
     
     @IBOutlet weak var BlueCircle: CircleDrawer!
-    
     @IBOutlet weak var YellowCircle: CircleDrawer!
-    
     @IBOutlet weak var GreenCircle: CircleDrawer!
-    
     @IBOutlet weak var RedCircle: CircleDrawer!
-    
     @IBOutlet weak var TopPlayersCollectionView: UICollectionView!
+    weak var loadingDialog : LoadingViewController!
+    weak var alertDialog : AlertViewController!
     
     private var sortedPlayers: [Players] = []
     
@@ -29,8 +27,7 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
+        loadingDialog = Utils.showLoadingDialog(viewController: self, message: "Obteniendo jugadores")
         getTopPlayers()
         setBlueCircle()
         setRedCircle()
@@ -52,13 +49,19 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
                 
                 self.sortedPlayers = Utils.sortPlayers(players: players!)
                 self.TopPlayersCollectionView.reloadSections(IndexSet(integer: 0))
+                self.loadingDialog.removeAnimate()
                 
                 
             } else {
                 
-                print("Error Web Service!")
+                self.loadingDialog.removeAnimate()
+                self.alertDialog = Utils.showAlertDialog(viewController : self, message : "Ha ocurrido un error, intente nuevamente")
                 
             }
+            
+            
+            
+            
             
         }
         

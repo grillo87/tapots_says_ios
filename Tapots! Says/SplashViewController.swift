@@ -18,8 +18,6 @@ class SplashViewController: BaseViewController {
     @IBOutlet weak var GreenCircle: CircleDrawer!
     @IBOutlet weak var YellowCircle: CircleDrawer!
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -69,6 +67,8 @@ class SplashViewController: BaseViewController {
         YellowCircle.setStartAngle(startAngle: 50)
         YellowCircle.setEndAngle(endAngle: 75)
         YellowCircle.setQuaterPosition(quaterPosition:GameConstants.YELLOW_VALUE)
+    
+        
         
     }
     

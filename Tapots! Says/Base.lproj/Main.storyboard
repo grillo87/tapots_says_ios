@@ -15,6 +15,61 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Loading View Controller-->
+        <scene sceneID="AAc-K5-CUd">
+            <objects>
+                <viewController storyboardIdentifier="loadingViewControllerId" id="yMp-iQ-EtI" customClass="LoadingViewController" customModule="Tapots__Says" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LY1-eg-Z5D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="480-Yl-gEq">
+                                <rect key="frame" x="51" y="142" width="219" height="196"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="706-Nl-YSy">
+                                        <rect key="frame" x="8" y="42" width="203" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.21176470588235294" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196" id="5Kh-5N-CLf"/>
+                                    <constraint firstItem="706-Nl-YSy" firstAttribute="leading" secondItem="480-Yl-gEq" secondAttribute="leading" constant="8" id="Lki-jm-Igz"/>
+                                    <constraint firstAttribute="trailing" secondItem="706-Nl-YSy" secondAttribute="trailing" constant="8" id="bte-oD-eO5"/>
+                                    <constraint firstItem="706-Nl-YSy" firstAttribute="top" secondItem="480-Yl-gEq" secondAttribute="top" constant="42" id="jVz-j0-spn"/>
+                                    <constraint firstAttribute="width" constant="219" id="zeK-KQ-nqb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8hy-mh-l8w">
+                                <rect key="frame" x="142" y="275" width="37" height="37"/>
+                                <color key="color" red="0.92156862745098034" green="0.26666666666666666" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8hy-mh-l8w" firstAttribute="leading" secondItem="706-Nl-YSy" secondAttribute="trailing" constant="-120" id="1Hs-xx-nJS"/>
+                            <constraint firstItem="480-Yl-gEq" firstAttribute="centerY" secondItem="LY1-eg-Z5D" secondAttribute="centerY" id="DVh-ub-tFW"/>
+                            <constraint firstItem="480-Yl-gEq" firstAttribute="centerX" secondItem="LY1-eg-Z5D" secondAttribute="centerX" id="Zpc-VY-FGE"/>
+                            <constraint firstItem="8hy-mh-l8w" firstAttribute="top" secondItem="480-Yl-gEq" secondAttribute="bottom" constant="-63" id="dHD-pv-wHV"/>
+                            <constraint firstItem="8hy-mh-l8w" firstAttribute="leading" secondItem="480-Yl-gEq" secondAttribute="trailing" constant="-128" id="lAZ-zA-O2d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jXM-x1-6Du"/>
+                    </view>
+                    <connections>
+                        <outlet property="LoadingLabel" destination="706-Nl-YSy" id="VvY-q7-5KI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qF-b9-EJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502.5" y="-800"/>
+        </scene>
         <!--Splash View Controller-->
         <scene sceneID="xnw-uv-Owh">
             <objects>
@@ -316,7 +371,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mqa-6F-dpl">
                                                     <rect key="frame" x="0.0" y="0.0" width="108" height="104"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDE-ce-ICa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDE-ce-ICa">
                                                     <rect key="frame" x="114" y="8" width="164" height="56"/>
                                                     <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="30"/>
                                                     <color key="textColor" red="0.20368022129999999" green="0.38682969090000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -564,6 +619,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTx-az-VAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4652" y="104"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="Q3Y-Mj-hfe">
+            <objects>
+                <viewController storyboardIdentifier="alertViewControllerId" id="w5p-Kg-7Wt" customClass="AlertViewController" customModule="Tapots__Says" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xJU-wg-V6F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NK1-Ko-SlH">
+                                <rect key="frame" x="51" y="142" width="219" height="196"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFS-zi-gnu">
+                                        <rect key="frame" x="8" y="8" width="203" height="127"/>
+                                        <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Id-S7-OD1">
+                                        <rect key="frame" x="8" y="143" width="203" height="45"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="17"/>
+                                        <state key="normal" title="Aceptar">
+                                            <color key="titleColor" red="0.1529411765" green="0.21176470589999999" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="CloseAlertDialog:" destination="w5p-Kg-7Wt" eventType="touchUpInside" id="udQ-bD-KKQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1529411765" green="0.21176470589999999" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6Id-S7-OD1" secondAttribute="trailing" constant="8" id="72P-Cj-U4N"/>
+                                    <constraint firstItem="6Id-S7-OD1" firstAttribute="top" secondItem="fFS-zi-gnu" secondAttribute="bottom" constant="8" id="BMz-jE-pL8"/>
+                                    <constraint firstItem="6Id-S7-OD1" firstAttribute="leading" secondItem="NK1-Ko-SlH" secondAttribute="leading" constant="8" id="DnN-MP-RIH"/>
+                                    <constraint firstItem="fFS-zi-gnu" firstAttribute="top" secondItem="NK1-Ko-SlH" secondAttribute="top" constant="8" id="FCC-Tp-ItH"/>
+                                    <constraint firstAttribute="height" constant="196" id="JV2-AW-mBT"/>
+                                    <constraint firstAttribute="bottom" secondItem="fFS-zi-gnu" secondAttribute="bottom" constant="61" id="Jsm-iu-Xjb"/>
+                                    <constraint firstAttribute="width" constant="219" id="UyR-Ab-t3r"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Id-S7-OD1" secondAttribute="bottom" constant="8" id="hVD-7y-DnQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fFS-zi-gnu" secondAttribute="trailing" constant="8" id="irN-6i-EqM"/>
+                                    <constraint firstItem="fFS-zi-gnu" firstAttribute="leading" secondItem="NK1-Ko-SlH" secondAttribute="leading" constant="8" id="pFB-2J-djP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NK1-Ko-SlH" firstAttribute="centerY" secondItem="xJU-wg-V6F" secondAttribute="centerY" id="C4z-2w-A4Z"/>
+                            <constraint firstItem="NK1-Ko-SlH" firstAttribute="centerX" secondItem="xJU-wg-V6F" secondAttribute="centerX" id="Oj0-hs-WdX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p4C-hU-vhn"/>
+                    </view>
+                    <connections>
+                        <outlet property="AlertLabel" destination="fFS-zi-gnu" id="J8P-Cb-x0o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Dz-fb-zls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522.5" y="-800"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
