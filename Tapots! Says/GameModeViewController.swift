@@ -79,24 +79,24 @@ class GameModeViewController: BaseViewController {
         
         let navigationBarAppearace = UINavigationBar.appearance()
         
-        navigationBarAppearace.tintColor = Colors.white
-        navigationBarAppearace.barTintColor = Colors.darkerBlue
-        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Colors.white]
+        navigationBarAppearace.tintColor = UIColor(named: "white")!
+        navigationBarAppearace.barTintColor = UIColor(named: "darkerBlue")!
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor(named: "white")!]
         
     }
     
     
     private func setButtonBordersColors(){
         
-        NormalGameButton.layer.borderColor = Colors.white.cgColor
-        InverseGameButton.layer.borderColor = Colors.white.cgColor
+        NormalGameButton.layer.borderColor = UIColor(named: "white")!.cgColor
+        InverseGameButton.layer.borderColor = UIColor(named: "white")!.cgColor
         
     }
     
     
     private func setBlueCircle() {
         
-        BlueCircle.setBackground(background: Colors.blueDoots)
+        BlueCircle.setBackground(background: UIColor(named: "blueDoots")!)
         BlueCircle.setStartAngle(startAngle: 0)
         BlueCircle.setEndAngle(endAngle: 25)
         BlueCircle.setQuaterPosition(quaterPosition: GameConstants.BLUE_VALUE)
@@ -107,7 +107,7 @@ class GameModeViewController: BaseViewController {
     
     private func setRedCircle() {
         
-        RedCircle.setBackground(background: Colors.redDoots)
+        RedCircle.setBackground(background: UIColor(named: "redDoots")!)
         RedCircle.setStartAngle(startAngle: 25)
         RedCircle.setEndAngle(endAngle: 50)
         RedCircle.setQuaterPosition(quaterPosition:GameConstants.RED_VALUE)
@@ -116,7 +116,7 @@ class GameModeViewController: BaseViewController {
     
     private func setYellowCircle() {
         
-        YellowCircle.setBackground(background: Colors.yellowDoots)
+        YellowCircle.setBackground(background: UIColor(named: "yellowDoots")!)
         YellowCircle.setStartAngle(startAngle: 50)
         YellowCircle.setEndAngle(endAngle: 75)
         YellowCircle.setQuaterPosition(quaterPosition:GameConstants.YELLOW_VALUE)
@@ -125,7 +125,7 @@ class GameModeViewController: BaseViewController {
     
     private func setGreenCircle() {
         
-        GreenCircle.setBackground(background: Colors.greenDoots)
+        GreenCircle.setBackground(background: UIColor(named: "greenDoots")!)
         GreenCircle.setStartAngle(startAngle: 75)
         GreenCircle.setEndAngle(endAngle: 100)
         GreenCircle.setQuaterPosition(quaterPosition:GameConstants.GREEN_VALUE)

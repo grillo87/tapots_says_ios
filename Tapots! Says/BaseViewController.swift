@@ -48,7 +48,7 @@ public class BaseViewController: UIViewController {
     
     private func setBackgroundFrame() {
         
-        let gradientColorBackground = GradientColor(.diagonal, frame: self.view.frame, colors: [Colors.black, Colors.darkerBlue,Colors.blueDoots ])
+        let gradientColorBackground = GradientColor(.diagonal, frame: self.view.frame, colors: [UIColor(named: "black")!, UIColor(named: "darkerBlue")!,UIColor(named: "blueDoots")! ])
         self.view.backgroundColor = gradientColorBackground
         
     }
