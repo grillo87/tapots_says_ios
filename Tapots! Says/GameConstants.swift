@@ -10,6 +10,7 @@ import Foundation
 
 public class GameConstants {
     
+    public static let DEFAULT_COLOR_VALUE = 0
     public static let BLUE_VALUE = 1
     public static let RED_VALUE = 2
     public static let GREEN_VALUE = 3

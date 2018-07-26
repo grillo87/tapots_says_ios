@@ -13,10 +13,14 @@ public class GameElement {
     private var color : Int
     // Sound
     
+    init() {
+        self.color = GameConstants.DEFAULT_COLOR_VALUE
+    }
+    
     init (color :Int) {
-    
-    self.color = color
-    
+        
+        self.color = color
+        
     }
     
     
@@ -31,7 +35,7 @@ public class GameElement {
         return self.color
         
     }
-
+    
     
 }
 

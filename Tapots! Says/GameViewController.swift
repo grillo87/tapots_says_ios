@@ -11,6 +11,10 @@ import UIKit
 class GameViewController: BaseViewController {
     
     var gameMode : Int!
+    var gameRound : Int!
+    var gameController : GameController!
+    var isPlayingSequence : Bool = false
+    var gameSequenceIndex : Int!
     
     
     @IBOutlet weak var BlueCircle: CircleDrawer!
@@ -21,27 +25,71 @@ class GameViewController: BaseViewController {
     
     @IBOutlet weak var RedCircle: CircleDrawer!
     
+    @IBOutlet weak var GameRoundLabel: UILabel!
+    
     @IBAction func colorSelected(recognizer:UITapGestureRecognizer) {
         
-        switch recognizer.view?.tag {
-        case GameConstants.BLUE_VALUE:
-            print("Blue tap")
+        if (self.isPlayingSequence == false) {
             
-        case GameConstants.RED_VALUE:
-            print("Red tap")
+            switch recognizer.view?.tag {
+            case GameConstants.BLUE_VALUE:
+                bounceBlueCircle(playNext: false, gameElements: nil)
+                
+            case GameConstants.RED_VALUE:
+                bounceRedCircle(playNext: false, gameElements: nil)
+                
+            case GameConstants.GREEN_VALUE:
+                bounceGreenCircle(playNext: false, gameElements: nil)
+                
+            case GameConstants.YELLOW_VALUE:
+                bounceYellowCircle(playNext: false, gameElements: nil)
+                
+            default:
+                print("No color")
+            }
             
-        case GameConstants.GREEN_VALUE:
-            print("Green tap")
-            
-        case GameConstants.YELLOW_VALUE:
-            print("Yellow tap")
-            
-        default:
-            print("No color")
         }
         
     }
     
+    
+    public func setGameRound(gameRound : Int) {
+        
+        self.gameRound = gameRound
+        GameRoundLabel.text = "Round: \(gameRound)"
+        
+        
+    }
+    
+    
+    public func initializeGameSequenceIndex() {
+        
+        self.gameSequenceIndex = 0
+        self.isPlayingSequence = false
+        
+    }
+    
+    
+    public func getGameRound() -> Int {
+        
+        return self.gameRound
+        
+    }
+    
+    
+    private func initGame() {
+        
+        self.setGameRound(gameRound: 1)
+        self.gameController = GameController(gameViewController : self, gameMode : self.gameMode)
+        self.gameController.generateGameSequence(gameRound: self.getGameRound())
+        
+    }
+    
+    public func setPlayingSequence(playingSequence : Bool) {
+        
+        self.isPlayingSequence = playingSequence;
+        
+    }
     
     
     override func viewDidLoad() {
@@ -52,24 +100,66 @@ class GameViewController: BaseViewController {
         setYellowCircle()
         setGreenCircle()
         setViewControllerTitle()
-        
+        initializeGameSequenceIndex()
+        initGame()
         
     }
     
     
     private func setViewControllerTitle() {
-    
-    if (self.gameMode == GameConstants.NORMAL_MODE) {
+        
+        if (self.gameMode == GameConstants.NORMAL_MODE) {
             
-           self.navigationItem.title = GameConstants.NORMAL_TITLE
+            self.navigationItem.title = GameConstants.NORMAL_TITLE
             
         } else {
             
             self.navigationItem.title = GameConstants.REVERSE_TITLE
             
         }
+        
+        
+    }
     
     
+    public func playGameSequence(gameSequence : [GameElement]) {
+        
+        if (self.gameSequenceIndex <= gameSequence.count - 1) {
+            
+            let gameElement : GameElement = gameSequence[gameSequenceIndex]
+            
+            switch (gameElement.getColor()) {
+                
+            case (GameConstants.BLUE_VALUE):
+                
+                bounceBlueCircle(playNext: true, gameElements: gameSequence)
+                
+            case (GameConstants.RED_VALUE):
+                
+                bounceRedCircle(playNext: true, gameElements: gameSequence)
+                
+            case (GameConstants.GREEN_VALUE):
+                
+                bounceGreenCircle(playNext: true, gameElements: gameSequence)
+                
+            case (GameConstants.YELLOW_VALUE):
+                
+                bounceYellowCircle(playNext: true, gameElements: gameSequence)
+                
+            default:
+                print("No color")
+                
+            }
+            
+            self.gameSequenceIndex = self.gameSequenceIndex + 1
+            
+        } else {
+            
+            initializeGameSequenceIndex();
+            
+        }
+        
+        
     }
     
     
@@ -111,7 +201,7 @@ class GameViewController: BaseViewController {
     
     
     
-    private func bounceBlueCircle() {
+    private func bounceBlueCircle(playNext : Bool, gameElements : [GameElement]?) {
         
         self.BlueCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 1,
@@ -124,12 +214,18 @@ class GameViewController: BaseViewController {
             },
                        completion: { _ in
                         
+                        if (playNext) {
+                            
+                            self.playGameSequence(gameSequence: gameElements!)
+                            
+                            
+                        }
                         
         })
         
     }
     
-    private func bounceRedCircle() {
+    private func bounceRedCircle(playNext : Bool, gameElements : [GameElement]?) {
         
         self.RedCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 1,
@@ -142,6 +238,12 @@ class GameViewController: BaseViewController {
             },
                        completion: { _ in
                         
+                        if (playNext) {
+                            
+                            self.playGameSequence(gameSequence: gameElements!)
+                            
+                            
+                        }
                         
                         
         })
@@ -149,7 +251,7 @@ class GameViewController: BaseViewController {
     }
     
     
-    private func bounceGreenCircle() {
+    private func bounceGreenCircle(playNext : Bool, gameElements : [GameElement]?) {
         
         self.GreenCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 1,
@@ -162,12 +264,18 @@ class GameViewController: BaseViewController {
             },
                        completion: { _ in
                         
+                        if (playNext) {
+                            
+                            self.playGameSequence(gameSequence: gameElements!)
+                            
+                            
+                        }
                         
         })
         
     }
     
-    private func bounceYellowCircle() {
+    private func bounceYellowCircle(playNext : Bool, gameElements : [GameElement]?) {
         
         self.YellowCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 1.5,
@@ -180,9 +288,15 @@ class GameViewController: BaseViewController {
             },
                        completion: { _ in
                         
+                        if (playNext) {
+                            
+                            self.playGameSequence(gameSequence: gameElements!)
+                            
+                            
+                        }
                         
         })
         
     }
-
+    
 }

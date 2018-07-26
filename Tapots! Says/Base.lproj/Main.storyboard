@@ -700,6 +700,7 @@
                     </view>
                     <connections>
                         <outlet property="BlueCircle" destination="I6H-9t-Vo9" id="DLH-3C-v7h"/>
+                        <outlet property="GameRoundLabel" destination="LM7-J3-isy" id="84N-Xv-OVl"/>
                         <outlet property="GreenCircle" destination="R5I-X6-mc1" id="Ryl-rZ-QV0"/>
                         <outlet property="RedCircle" destination="DhI-DT-cDS" id="qV1-Zm-lkE"/>
                         <outlet property="YellowCircle" destination="mhJ-kw-zcq" id="zL7-sZ-NfA"/>
