@@ -614,26 +614,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6H-9t-Vo9" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                            <view opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6H-9t-Vo9" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
                                 <rect key="frame" x="57" y="186" width="103" height="86"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mmz-gu-G71" appends="YES" id="FRs-j0-jkP"/>
+                                </connections>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5I-X6-mc1" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                            <view opaque="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5I-X6-mc1" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
                                 <rect key="frame" x="57" y="285" width="103" height="86"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KOX-aO-8h0" appends="YES" id="zGZ-e6-BCD"/>
+                                </connections>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhJ-kw-zcq" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                            <view opaque="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhJ-kw-zcq" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
                                 <rect key="frame" x="168" y="285" width="103" height="86"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bLH-Mx-3hG" appends="YES" id="GOo-H2-sBv"/>
+                                </connections>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-DT-cDS" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                            <view opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-DT-cDS" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
                                 <rect key="frame" x="168" y="186" width="103" height="86"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1IS-Kt-pDm" appends="YES" id="IIB-qA-pye"/>
+                                </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_on" translatesAutoresizingMaskIntoConstraints="NO" id="KAu-b3-fqg">
-                                <rect key="frame" x="88" y="138" width="40" height="40"/>
+                                <rect key="frame" x="118" y="160" width="20" height="18"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_on" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-nj-lWL">
-                                <rect key="frame" x="140" y="138" width="40" height="40"/>
+                                <rect key="frame" x="150" y="160" width="20" height="18"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_on" translatesAutoresizingMaskIntoConstraints="NO" id="bZf-JR-q9M">
-                                <rect key="frame" x="192" y="138" width="40" height="40"/>
+                                <rect key="frame" x="182" y="160" width="20" height="18"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Round: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-J3-isy">
                                 <rect key="frame" x="114" y="64" width="92" height="47"/>
@@ -690,6 +706,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTx-az-VAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mmz-gu-G71">
+                    <connections>
+                        <action selector="colorSelectedWithRecognizer:" destination="Toe-cw-9Ae" id="wKj-uB-5HT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1IS-Kt-pDm">
+                    <connections>
+                        <action selector="colorSelectedWithRecognizer:" destination="Toe-cw-9Ae" id="Ppr-VO-Qjz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="KOX-aO-8h0">
+                    <connections>
+                        <action selector="colorSelectedWithRecognizer:" destination="Toe-cw-9Ae" id="GG3-M4-mPS"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bLH-Mx-3hG">
+                    <connections>
+                        <action selector="colorSelectedWithRecognizer:" destination="Toe-cw-9Ae" id="AE6-oR-wL7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4651.875" y="103.75"/>
         </scene>

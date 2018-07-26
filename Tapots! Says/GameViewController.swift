@@ -21,6 +21,29 @@ class GameViewController: BaseViewController {
     
     @IBOutlet weak var RedCircle: CircleDrawer!
     
+    @IBAction func colorSelected(recognizer:UITapGestureRecognizer) {
+        
+        switch recognizer.view?.tag {
+        case GameConstants.BLUE_VALUE:
+            print("Blue tap")
+            
+        case GameConstants.RED_VALUE:
+            print("Red tap")
+            
+        case GameConstants.GREEN_VALUE:
+            print("Green tap")
+            
+        case GameConstants.YELLOW_VALUE:
+            print("Yellow tap")
+            
+        default:
+            print("No color")
+        }
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
