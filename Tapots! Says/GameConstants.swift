@@ -33,6 +33,9 @@ public class GameConstants {
     public static let INITIAL_GAME_DELAY_VALUE : Double = 1
     public static let DELAY_UPDATE_FACTOR_VALUE : Double = 0.02
     
+    public static let NEW_GAME_VALUE = 1
+    public static let MENU_VALUE = 2
+    
     
     
 }

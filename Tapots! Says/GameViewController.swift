@@ -77,7 +77,7 @@ class GameViewController: BaseViewController {
     
     public func finishUserGame() {
         
-        
+        self.performSegue(withIdentifier: "FinishGameSegue", sender: self)
         
     }
     

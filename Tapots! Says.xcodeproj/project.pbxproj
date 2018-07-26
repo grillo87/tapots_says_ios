@@ -14,6 +14,7 @@
 		5058E2DE2102333A00EFEDDB /* BaseDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5058E2DD2102333A00EFEDDB /* BaseDialogViewController.swift */; };
 		50976B8520FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50976B8420FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift */; };
 		50A4372B210622C10028812B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4372A210622C10028812B /* GameController.swift */; };
+		50C46D6B210A65BA0036C4B0 /* FinishGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C46D6A210A65BA0036C4B0 /* FinishGameViewController.swift */; };
 		50CA45FF20F7B26A006D297C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA45FE20F7B26A006D297C /* GameViewController.swift */; };
 		50DE518E20F3B3EA0068C914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE518D20F3B3EA0068C914 /* AppDelegate.swift */; };
 		50DE519320F3B3EA0068C914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DE519120F3B3EA0068C914 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		5058E2DD2102333A00EFEDDB /* BaseDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDialogViewController.swift; sourceTree = "<group>"; };
 		50976B8420FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		50A4372A210622C10028812B /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		50C46D6A210A65BA0036C4B0 /* FinishGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGameViewController.swift; sourceTree = "<group>"; };
 		50CA45FE20F7B26A006D297C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		50DE518A20F3B3EA0068C914 /* Tapots! Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tapots! Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DE518D20F3B3EA0068C914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				50EFCF0020F6552C008952A3 /* GameModeViewController.swift */,
 				50EFCF0220F65AC8008952A3 /* TopPlayersViewController.swift */,
 				50CA45FE20F7B26A006D297C /* GameViewController.swift */,
+				50C46D6A210A65BA0036C4B0 /* FinishGameViewController.swift */,
 				50DE519420F3B3EB0068C914 /* Assets.xcassets */,
 				50EC1EEB2106278D0050659F /* Colors.xcassets */,
 				50DE519620F3B3EB0068C914 /* LaunchScreen.storyboard */,
@@ -290,6 +293,7 @@
 				50EFCEF320F64052008952A3 /* ButtonMenu.swift in Sources */,
 				50DE51AA20F3EC700068C914 /* SplashViewController.swift in Sources */,
 				50976B8520FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift in Sources */,
+				50C46D6B210A65BA0036C4B0 /* FinishGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

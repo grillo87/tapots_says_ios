@@ -464,10 +464,10 @@
             </objects>
             <point key="canvasLocation" x="1522.5" y="103.75"/>
         </scene>
-        <!--Modo de Juego-->
+        <!--Game Mode-->
         <scene sceneID="qhB-XO-clo">
             <objects>
-                <viewController title="Modo de Juego" id="X7l-bb-fCQ" customClass="GameModeViewController" customModule="Tapots__Says" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Game Mode" id="X7l-bb-fCQ" customClass="GameModeViewController" customModule="Tapots__Says" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4ah-hf-chb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -604,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHV-09-34x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3538" y="104"/>
+            <point key="canvasLocation" x="3529" y="104"/>
         </scene>
         <!--Game-->
         <scene sceneID="LMN-Wi-I4e">
@@ -707,6 +707,7 @@
                         <outlet property="SecondHearth" destination="UIb-nj-lWL" id="Tbk-n3-bWb"/>
                         <outlet property="ThirdHearth" destination="bZf-JR-q9M" id="kDa-45-xbi"/>
                         <outlet property="YellowCircle" destination="mhJ-kw-zcq" id="zL7-sZ-NfA"/>
+                        <segue destination="4bR-l4-w7R" kind="show" identifier="FinishGameSegue" id="u2a-Ei-Y7U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTx-az-VAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -802,6 +803,150 @@
             </objects>
             <point key="canvasLocation" x="1522.5" y="-800"/>
         </scene>
+        <!--Finish Game-->
+        <scene sceneID="xlL-lN-oNE">
+            <objects>
+                <viewController title="Finish Game" id="4bR-l4-w7R" customClass="FinishGameViewController" customModule="Tapots__Says" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Q0-34-k2D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qes-JU-prU">
+                                <rect key="frame" x="0.0" y="64" width="336" height="416"/>
+                                <subviews>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5M-sV-1AD" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="80" width="100" height="102"/>
+                                    </view>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJL-wO-aec" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                        <rect key="frame" x="202" y="272" width="100" height="58"/>
+                                    </view>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLe-5y-KdN" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                        <rect key="frame" x="202" y="140" width="100" height="105"/>
+                                    </view>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-Be-52O" customClass="CircleDrawer" customModule="Tapots__Says" customModuleProvider="target">
+                                        <rect key="frame" x="54" y="313" width="100" height="17"/>
+                                    </view>
+                                    <view opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y44-gb-LBD">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="416"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="y44-gb-LBD" firstAttribute="top" secondItem="Qes-JU-prU" secondAttribute="top" id="0Hm-H8-Oda"/>
+                                    <constraint firstItem="aUd-Be-52O" firstAttribute="top" secondItem="y5M-sV-1AD" secondAttribute="bottom" constant="131" id="AlB-DI-kWS"/>
+                                    <constraint firstItem="RLe-5y-KdN" firstAttribute="leading" secondItem="y5M-sV-1AD" secondAttribute="trailing" constant="94" id="DcE-lf-iiJ"/>
+                                    <constraint firstItem="DJL-wO-aec" firstAttribute="top" secondItem="RLe-5y-KdN" secondAttribute="bottom" constant="27" id="HjJ-Fh-gqG"/>
+                                    <constraint firstAttribute="trailing" secondItem="y5M-sV-1AD" secondAttribute="trailing" constant="228" id="Oyz-zy-G4c"/>
+                                    <constraint firstItem="DJL-wO-aec" firstAttribute="leading" secondItem="Qes-JU-prU" secondAttribute="leading" constant="202" id="T5b-CT-sm7"/>
+                                    <constraint firstAttribute="bottom" secondItem="DJL-wO-aec" secondAttribute="bottom" constant="86" id="WvL-kb-LVy"/>
+                                    <constraint firstAttribute="bottom" secondItem="aUd-Be-52O" secondAttribute="bottom" constant="86" id="YUD-wg-qzh"/>
+                                    <constraint firstItem="y44-gb-LBD" firstAttribute="height" secondItem="Qes-JU-prU" secondAttribute="height" id="baz-gq-q2I"/>
+                                    <constraint firstItem="y44-gb-LBD" firstAttribute="width" secondItem="Qes-JU-prU" secondAttribute="width" id="blv-pZ-fdi"/>
+                                    <constraint firstItem="DJL-wO-aec" firstAttribute="leading" secondItem="aUd-Be-52O" secondAttribute="trailing" constant="48" id="cmL-bW-SKD"/>
+                                    <constraint firstItem="y44-gb-LBD" firstAttribute="leading" secondItem="Qes-JU-prU" secondAttribute="leading" id="dmK-bN-g7B"/>
+                                    <constraint firstItem="aUd-Be-52O" firstAttribute="leading" secondItem="Qes-JU-prU" secondAttribute="leading" constant="54" id="hFK-zf-Yru"/>
+                                    <constraint firstAttribute="trailing" secondItem="RLe-5y-KdN" secondAttribute="trailing" constant="34" id="j61-pe-nE0"/>
+                                    <constraint firstAttribute="trailing" secondItem="DJL-wO-aec" secondAttribute="trailing" constant="34" id="jHU-kb-SXa"/>
+                                    <constraint firstItem="y5M-sV-1AD" firstAttribute="leading" secondItem="Qes-JU-prU" secondAttribute="leading" constant="8" id="pfK-CR-rGm"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAPOTS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6l-Uy-QWx">
+                                <rect key="frame" x="16" y="64" width="288" height="56"/>
+                                <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAYS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPL-eE-cAl">
+                                <rect key="frame" x="16" y="128" width="288" height="28"/>
+                                <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="15"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqH-eM-aOk">
+                                <rect key="frame" x="81" y="223" width="158" height="33"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.52549019610000003" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Nuevo Juego">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="GoBackToGameMode:" destination="4bR-l4-w7R" eventType="touchUpInside" id="Q71-SW-6tB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6v-z8-6Nd">
+                                <rect key="frame" x="81" y="315" width="158" height="33"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.52549019610000003" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Menú">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="GoBackToMenu:" destination="4bR-l4-w7R" eventType="touchUpInside" id="HKk-ET-dlZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jPL-eE-cAl" firstAttribute="centerX" secondItem="n6l-Uy-QWx" secondAttribute="centerX" id="2kG-pd-dK9"/>
+                            <constraint firstItem="n6l-Uy-QWx" firstAttribute="leading" secondItem="z34-A0-AQS" secondAttribute="leading" constant="16" id="FS6-Ln-kGx"/>
+                            <constraint firstItem="RLe-5y-KdN" firstAttribute="top" secondItem="z34-A0-AQS" secondAttribute="top" constant="140" id="MKg-RR-vzB"/>
+                            <constraint firstItem="y5M-sV-1AD" firstAttribute="top" secondItem="n6l-Uy-QWx" secondAttribute="bottom" constant="24" id="OI4-UB-LOz"/>
+                            <constraint firstItem="Qes-JU-prU" firstAttribute="bottom" secondItem="z34-A0-AQS" secondAttribute="bottom" id="OPd-7S-MMU"/>
+                            <constraint firstItem="jPL-eE-cAl" firstAttribute="top" secondItem="n6l-Uy-QWx" secondAttribute="bottom" constant="8" id="R3F-96-fsC"/>
+                            <constraint firstItem="n6l-Uy-QWx" firstAttribute="centerX" secondItem="z34-A0-AQS" secondAttribute="centerX" id="TVy-Nr-qo8"/>
+                            <constraint firstItem="H6v-z8-6Nd" firstAttribute="leading" secondItem="z34-A0-AQS" secondAttribute="leading" constant="81" id="Uat-zn-7VA"/>
+                            <constraint firstItem="HqH-eM-aOk" firstAttribute="leading" secondItem="z34-A0-AQS" secondAttribute="leading" constant="81" id="WPD-Wj-pNB"/>
+                            <constraint firstItem="Qes-JU-prU" firstAttribute="width" secondItem="z34-A0-AQS" secondAttribute="width" constant="16" id="Yj2-f6-EcA"/>
+                            <constraint firstItem="HqH-eM-aOk" firstAttribute="centerX" secondItem="jPL-eE-cAl" secondAttribute="centerX" id="bpm-TE-BaN"/>
+                            <constraint firstItem="aUd-Be-52O" firstAttribute="top" secondItem="z34-A0-AQS" secondAttribute="top" constant="313" id="c53-3Z-xEs"/>
+                            <constraint firstItem="Qes-JU-prU" firstAttribute="leading" secondItem="jPL-eE-cAl" secondAttribute="leading" constant="-16" id="htK-ei-mDe"/>
+                            <constraint firstItem="DJL-wO-aec" firstAttribute="top" secondItem="z34-A0-AQS" secondAttribute="top" constant="272" id="i4K-Fy-Nws"/>
+                            <constraint firstItem="n6l-Uy-QWx" firstAttribute="top" secondItem="z34-A0-AQS" secondAttribute="top" id="n0E-Ul-b1j"/>
+                            <constraint firstItem="Qes-JU-prU" firstAttribute="height" secondItem="z34-A0-AQS" secondAttribute="height" id="ojO-yX-cDC"/>
+                            <constraint firstItem="jPL-eE-cAl" firstAttribute="leading" secondItem="z34-A0-AQS" secondAttribute="leading" constant="16" id="phe-rb-7kR"/>
+                            <constraint firstItem="HqH-eM-aOk" firstAttribute="centerX" secondItem="H6v-z8-6Nd" secondAttribute="centerX" id="qIG-be-KEd"/>
+                            <constraint firstItem="HqH-eM-aOk" firstAttribute="top" secondItem="jPL-eE-cAl" secondAttribute="bottom" constant="67" id="tph-at-7gl"/>
+                            <constraint firstItem="H6v-z8-6Nd" firstAttribute="top" secondItem="HqH-eM-aOk" secondAttribute="bottom" constant="59" id="yzS-D8-u5e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z34-A0-AQS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Juego Finalizado" id="EAc-DR-aL0">
+                        <barButtonItem key="backBarButtonItem" title=" " id="UwD-1P-Rpl"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="BlueCircle" destination="y5M-sV-1AD" id="yyZ-H5-OsM"/>
+                        <outlet property="GreenCircle" destination="RLe-5y-KdN" id="8Cx-Rn-dW5"/>
+                        <outlet property="MenuGameButton" destination="H6v-z8-6Nd" id="jh6-L7-K48"/>
+                        <outlet property="NewGameButton" destination="HqH-eM-aOk" id="JxT-vE-5rE"/>
+                        <outlet property="RedCircle" destination="aUd-Be-52O" id="W13-rg-YX0"/>
+                        <outlet property="TitleLabel" destination="n6l-Uy-QWx" id="2lc-rV-Lqu"/>
+                        <outlet property="YellowCircle" destination="DJL-wO-aec" id="13Q-oZ-ti3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUm-i1-sgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5661" y="104"/>
+        </scene>
     </scenes>
     <resources>
         <image name="heart_on" width="20" height="18"/>
@@ -810,6 +955,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CVj-50-Gcl"/>
+        <segue reference="k5U-WF-0eg"/>
     </inferredMetricsTieBreakers>
 </document>
