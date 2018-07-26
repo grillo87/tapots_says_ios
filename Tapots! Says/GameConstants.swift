@@ -30,8 +30,8 @@ public class GameConstants {
     public static let NORMAL_TITLE = "Modo Normal de Juego"
     public static let REVERSE_TITLE = "Modo Inverso de Juego"
     
-    public static let INITIAL_GAME_DELAY_VALUE = 500
-    public static let DELAY_UPDATE_FACTOR_VALUE = 20
+    public static let INITIAL_GAME_DELAY_VALUE : Double = 1
+    public static let DELAY_UPDATE_FACTOR_VALUE : Double = 0.02
     
     
     

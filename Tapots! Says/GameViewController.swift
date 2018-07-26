@@ -15,7 +15,14 @@ class GameViewController: BaseViewController {
     var gameController : GameController!
     var isPlayingSequence : Bool = false
     var gameSequenceIndex : Int!
+    var gameElementDelay : Double!
     
+    
+    @IBOutlet weak var FirstHearth: UIImageView!
+    
+    @IBOutlet weak var SecondHearth: UIImageView!
+    
+    @IBOutlet weak var ThirdHearth: UIImageView!
     
     @IBOutlet weak var BlueCircle: CircleDrawer!
     
@@ -34,19 +41,26 @@ class GameViewController: BaseViewController {
             switch recognizer.view?.tag {
             case GameConstants.BLUE_VALUE:
                 bounceBlueCircle(playNext: false, gameElements: nil)
+                gameController.playRound(color: GameConstants.BLUE_VALUE, gameMode: self.gameMode)
                 
             case GameConstants.RED_VALUE:
                 bounceRedCircle(playNext: false, gameElements: nil)
+                gameController.playRound(color: GameConstants.RED_VALUE, gameMode: self.gameMode)
                 
             case GameConstants.GREEN_VALUE:
                 bounceGreenCircle(playNext: false, gameElements: nil)
+                gameController.playRound(color: GameConstants.GREEN_VALUE, gameMode: self.gameMode)
                 
             case GameConstants.YELLOW_VALUE:
                 bounceYellowCircle(playNext: false, gameElements: nil)
+                gameController.playRound(color: GameConstants.YELLOW_VALUE, gameMode: self.gameMode)
                 
             default:
                 print("No color")
             }
+            
+            
+            
             
         }
         
@@ -58,6 +72,31 @@ class GameViewController: BaseViewController {
         self.gameRound = gameRound
         GameRoundLabel.text = "Round: \(gameRound)"
         
+        
+    }
+    
+    public func finishUserGame() {
+        
+        
+        
+    }
+    
+    
+    public func lostFirstLife() {
+        
+        FirstHearth.image = UIImage(named: "heart_off")
+        
+    }
+    
+    public func lostSecondLife() {
+        
+        SecondHearth.image = UIImage(named: "heart_off")
+        
+    }
+    
+    public func lostThirdLife() {
+        
+        ThirdHearth.image = UIImage(named: "heart_off")
         
     }
     
@@ -76,10 +115,20 @@ class GameViewController: BaseViewController {
         
     }
     
+    public func setGameElementsDelay(newDelay : Double) {
+        
+        self.gameElementDelay = self.gameElementDelay - newDelay;
+        
+    }
+    
+    
+    
+    
     
     private func initGame() {
         
-        self.setGameRound(gameRound: 1)
+        self.gameElementDelay = GameConstants.INITIAL_GAME_DELAY_VALUE
+        self.setGameRound(gameRound: 0)
         self.gameController = GameController(gameViewController : self, gameMode : self.gameMode)
         self.gameController.generateGameSequence(gameRound: self.getGameRound())
         
@@ -204,7 +253,7 @@ class GameViewController: BaseViewController {
     private func bounceBlueCircle(playNext : Bool, gameElements : [GameElement]?) {
         
         self.BlueCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 1,
+        UIView.animate(withDuration: self.gameElementDelay,
                        delay: 0,
                        usingSpringWithDamping: 0.4,
                        initialSpringVelocity: 0.1,
@@ -228,7 +277,7 @@ class GameViewController: BaseViewController {
     private func bounceRedCircle(playNext : Bool, gameElements : [GameElement]?) {
         
         self.RedCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 1,
+        UIView.animate(withDuration: self.gameElementDelay,
                        delay: 0,
                        usingSpringWithDamping: 0.4,
                        initialSpringVelocity: 0.1,
@@ -254,7 +303,7 @@ class GameViewController: BaseViewController {
     private func bounceGreenCircle(playNext : Bool, gameElements : [GameElement]?) {
         
         self.GreenCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 1,
+        UIView.animate(withDuration: self.gameElementDelay,
                        delay: 0,
                        usingSpringWithDamping: 0.4,
                        initialSpringVelocity: 0.1,
@@ -278,7 +327,7 @@ class GameViewController: BaseViewController {
     private func bounceYellowCircle(playNext : Bool, gameElements : [GameElement]?) {
         
         self.YellowCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 1.5,
+        UIView.animate(withDuration: self.gameElementDelay,
                        delay: 0,
                        usingSpringWithDamping: 0.4,
                        initialSpringVelocity: 0.1,

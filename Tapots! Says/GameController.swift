@@ -79,4 +79,129 @@ public class GameController {
     }
     
     
+    public func playRound(color : Int, gameMode : Int) {
+        
+        if (color == gameSequence[currentGameElementPosition].getColor()) {
+            
+            updateGamePosition(gameMode:gameMode)
+            
+            
+            if (validateRoundEnd(gameMode : gameMode)) {
+                
+                generateNewRound(gameMode:gameMode)
+                
+            }
+            
+            
+        } else {
+            
+            userLossLife()
+            
+        }
+        
+    }
+    
+    private func userLossLife() {
+        
+        switch (self.usersLives) {
+            
+        case (1):
+            
+            self.usersLives = self.usersLives - 1
+            gameViewController.lostFirstLife()
+            gameViewController.finishUserGame()
+            
+            
+        case (2):
+            
+            self.usersLives = self.usersLives - 1
+            gameViewController.lostSecondLife()
+            
+            
+        case (3):
+            
+            self.usersLives = self.usersLives - 1
+            gameViewController.lostThirdLife()
+            
+        default:
+            
+            print("Different value")
+            
+            
+        }
+        
+    }
+    
+    private func updateGamePosition(gameMode : Int) {
+        
+        if (gameMode == GameConstants.NORMAL_MODE) {
+            
+            currentGameElementPosition = currentGameElementPosition + 1
+            
+        } else {
+            
+            currentGameElementPosition = currentGameElementPosition - 1
+            
+            
+        }
+        
+    }
+    
+    private func generateNewRound(gameMode : Int) {
+        
+        var newIndexValues = 0
+        
+        if (gameMode == GameConstants.NORMAL_MODE) {
+            
+            newIndexValues = currentGameElementPosition
+            
+        } else {
+            
+            newIndexValues = calculateReverseGameRound()
+            
+        }
+        
+        generateGameSequence(gameRound : newIndexValues)
+        gameViewController.setGameElementsDelay(newDelay: GameConstants.DELAY_UPDATE_FACTOR_VALUE)
+        
+        
+    }
+    
+    private func calculateReverseGameRound() -> Int {
+        
+        var result = 0
+        
+        result = (gameSequence.count) - self.currentGameElementPosition
+        
+        return result
+        
+    }
+    
+    private func validateRoundEnd(gameMode : Int) -> Bool {
+        
+        var result = false
+        
+        if (gameMode == GameConstants.NORMAL_MODE) {
+            
+            if (currentGameElementPosition >= gameSequence.count) {
+                
+                result = true
+                
+            }
+            
+        } else {
+            
+            if (currentGameElementPosition < 0) {
+                
+                result = true
+                
+            }
+            
+        }
+        
+        return result
+        
+    }
+    
+    
 }

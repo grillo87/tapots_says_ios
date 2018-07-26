@@ -700,9 +700,12 @@
                     </view>
                     <connections>
                         <outlet property="BlueCircle" destination="I6H-9t-Vo9" id="DLH-3C-v7h"/>
+                        <outlet property="FirstHearth" destination="KAu-b3-fqg" id="VCh-1i-dIT"/>
                         <outlet property="GameRoundLabel" destination="LM7-J3-isy" id="84N-Xv-OVl"/>
                         <outlet property="GreenCircle" destination="R5I-X6-mc1" id="Ryl-rZ-QV0"/>
                         <outlet property="RedCircle" destination="DhI-DT-cDS" id="qV1-Zm-lkE"/>
+                        <outlet property="SecondHearth" destination="UIb-nj-lWL" id="Tbk-n3-bWb"/>
+                        <outlet property="ThirdHearth" destination="bZf-JR-q9M" id="kDa-45-xbi"/>
                         <outlet property="YellowCircle" destination="mhJ-kw-zcq" id="zL7-sZ-NfA"/>
                     </connections>
                 </viewController>
