@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-
-<title>Tapots! Says</title>
+<b>Tapots! Says</b>
 
 <body>
 <b>Demo App developed for iOS, with Swift 4</b></br></br>
