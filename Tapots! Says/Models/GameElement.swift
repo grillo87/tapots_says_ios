@@ -11,7 +11,6 @@ import Foundation
 public class GameElement {
     
     private var color : Int
-    // Sound
     
     init() {
         self.color = GameConstants.DEFAULT_COLOR_VALUE

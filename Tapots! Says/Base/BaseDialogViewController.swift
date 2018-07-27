@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class BaseDialogViewController : BaseViewController {
+public class BaseDialogViewController : UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()

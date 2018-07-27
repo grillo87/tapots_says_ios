@@ -435,7 +435,7 @@
                         <viewLayoutGuide key="safeArea" id="bmZ-sN-W6I"/>
                     </view>
                     <connections>
-                        <outlet property="BlueCircle" destination="q33-ba-kgt" id="cSX-Bi-z5s"/>
+                        <outlet property="BlueCircle" destination="q33-ba-kgt" id="M4E-x8-AXr"/>
                         <outlet property="GreenCircle" destination="fqK-dY-v2j" id="d5l-4p-Tfi"/>
                         <outlet property="RedCircle" destination="5aE-IE-vaB" id="Os1-tu-3LH"/>
                         <outlet property="TopPlayersCollectionView" destination="nxj-lY-lwf" id="YM0-0z-RFU"/>
@@ -444,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfZ-NT-uiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671.875" y="982.5"/>
+            <point key="canvasLocation" x="2520" y="1079"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SZr-HD-6LI">

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController: BaseViewController {
     
@@ -17,20 +18,17 @@ class GameViewController: BaseViewController {
     var gameSequenceIndex : Int!
     var gameElementDelay : Double!
     
+    var audioPlayerGood = AVAudioPlayer()
+    var audioPlayerBad = AVAudioPlayer()
+    
+    var audioPlayerBlue = AVAudioPlayer()
+    var audioPlayerRed = AVAudioPlayer()
+    var audioPlayerGreen = AVAudioPlayer()
+    var audioPlayerYellow = AVAudioPlayer()
     
     @IBOutlet weak var FirstHearth: UIImageView!
-    
     @IBOutlet weak var SecondHearth: UIImageView!
-    
     @IBOutlet weak var ThirdHearth: UIImageView!
-    
-    @IBOutlet weak var BlueCircle: CircleDrawer!
-    
-    @IBOutlet weak var GreenCircle: CircleDrawer!
-    
-    @IBOutlet weak var YellowCircle: CircleDrawer!
-    
-    @IBOutlet weak var RedCircle: CircleDrawer!
     
     @IBOutlet weak var GameRoundLabel: UILabel!
     
@@ -144,16 +142,57 @@ class GameViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBlueCircle()
-        setRedCircle()
-        setYellowCircle()
-        setGreenCircle()
         setViewControllerTitle()
         initializeGameSequenceIndex()
+        initSounds()
         initGame()
         
     }
     
+    
+    private func initSounds() {
+        
+        do {
+            
+            try audioPlayerGood = AVAudioPlayer(contentsOf: GameConstants.GOOD_SOUND)
+            audioPlayerGood.prepareToPlay()
+            
+            try audioPlayerBad = AVAudioPlayer(contentsOf: GameConstants.BAD_SOUND)
+            audioPlayerBad.prepareToPlay()
+            
+            try audioPlayerBlue = AVAudioPlayer(contentsOf: GameConstants.BLUE_SOUND)
+            audioPlayerBlue.prepareToPlay()
+            
+            try audioPlayerRed = AVAudioPlayer(contentsOf: GameConstants.RED_SOUND)
+            audioPlayerRed.prepareToPlay()
+            
+            try audioPlayerGreen = AVAudioPlayer(contentsOf: GameConstants.GREEN_SOUND)
+            audioPlayerGreen.prepareToPlay()
+            
+            try audioPlayerYellow = AVAudioPlayer(contentsOf: GameConstants.YELLOW_SOUND)
+            audioPlayerYellow.prepareToPlay()
+            
+        } catch {
+            
+            print("Sounds error: \(error).")
+            
+        }
+        
+        
+    }
+    
+    public func playGoodSound() {
+        
+        audioPlayerGood.play()
+        
+    }
+    
+    
+    public func playBadSound() {
+        
+        audioPlayerBad.play()
+        
+    }
     
     private func setViewControllerTitle() {
         
@@ -181,18 +220,22 @@ class GameViewController: BaseViewController {
                 
             case (GameConstants.BLUE_VALUE):
                 
+                audioPlayerBlue.play()
                 bounceBlueCircle(playNext: true, gameElements: gameSequence)
                 
             case (GameConstants.RED_VALUE):
                 
+                audioPlayerRed.play()
                 bounceRedCircle(playNext: true, gameElements: gameSequence)
                 
             case (GameConstants.GREEN_VALUE):
                 
+                audioPlayerGreen.play()
                 bounceGreenCircle(playNext: true, gameElements: gameSequence)
                 
             case (GameConstants.YELLOW_VALUE):
                 
+                audioPlayerYellow.play()
                 bounceYellowCircle(playNext: true, gameElements: gameSequence)
                 
             default:
@@ -212,7 +255,7 @@ class GameViewController: BaseViewController {
     }
     
     
-    private func setBlueCircle() {
+    override public func setBlueCircle() {
         
         BlueCircle.setBackground(background: UIColor(named: "blueDoots")!)
         BlueCircle.setStartAngle(startAngle: 0)
@@ -220,34 +263,6 @@ class GameViewController: BaseViewController {
         BlueCircle.setQuaterPosition(quaterPosition: GameConstants.BLUE_VALUE)
         
     }
-    
-    private func setRedCircle() {
-        
-        RedCircle.setBackground(background: UIColor(named: "redDoots")!)
-        RedCircle.setStartAngle(startAngle: 25)
-        RedCircle.setEndAngle(endAngle: 50)
-        RedCircle.setQuaterPosition(quaterPosition:GameConstants.RED_VALUE)
-        
-    }
-    
-    private func setYellowCircle() {
-        
-        YellowCircle.setBackground(background: UIColor(named: "yellowDoots")!)
-        YellowCircle.setStartAngle(startAngle: 50)
-        YellowCircle.setEndAngle(endAngle: 75)
-        YellowCircle.setQuaterPosition(quaterPosition:GameConstants.YELLOW_VALUE)
-        
-    }
-    
-    private func setGreenCircle() {
-        
-        GreenCircle.setBackground(background: UIColor(named: "greenDoots")!)
-        GreenCircle.setStartAngle(startAngle: 75)
-        GreenCircle.setEndAngle(endAngle: 100)
-        GreenCircle.setQuaterPosition(quaterPosition:GameConstants.GREEN_VALUE)
-        
-    }
-    
     
     
     private func bounceBlueCircle(playNext : Bool, gameElements : [GameElement]?) {

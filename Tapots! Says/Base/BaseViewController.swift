@@ -1,75 +1,81 @@
 //
-//  TopPlayersViewController.swift
+//  BaseViewController.swift
 //  Tapots! Says
 //
-//  Created by José Grillo on 11/7/18.
+//  Created by José Grillo on 9/7/18.
 //  Copyright © 2018 José Grillo. All rights reserved.
 //
 
 import UIKit
-import Alamofire
-import CodableAlamofire
+import ChameleonFramework
 
-class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+public class BaseViewController: UIViewController {
     
+    @IBOutlet weak var BlueCircle: CircleDrawer! = nil
+    @IBOutlet weak var GreenCircle: CircleDrawer! = nil
+    @IBOutlet weak var YellowCircle: CircleDrawer! = nil
+    @IBOutlet weak var RedCircle: CircleDrawer! = nil
     
-    @IBOutlet weak var BlueCircle: CircleDrawer!
-    @IBOutlet weak var YellowCircle: CircleDrawer!
-    @IBOutlet weak var GreenCircle: CircleDrawer!
-    @IBOutlet weak var RedCircle: CircleDrawer!
-    @IBOutlet weak var TopPlayersCollectionView: UICollectionView!
-    weak var loadingDialog : LoadingViewController!
-    weak var alertDialog : AlertViewController!
-    
-    private var sortedPlayers: [Players] = []
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    struct AppUtility {
         
-        loadingDialog = Utils.showLoadingDialog(viewController: self, message: "Obteniendo jugadores")
-        getTopPlayers()
+        static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
+            
+            if let delegate = UIApplication.shared.delegate as? AppDelegate {
+                delegate.orientationLock = orientation
+            }
+        }
+        
+        /// OPTIONAL Added method to adjust lock and rotate to the desired orientation
+        static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
+            
+            self.lockOrientation(orientation)
+            
+            UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
+        }
+        
+    }
+    
+    override public var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
+    override public func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+
+        AppUtility.lockOrientation(.portrait)
+        setBackgroundFrame()
+        setNavigationBar()
+        
         setBlueCircle()
         setRedCircle()
         setYellowCircle()
         setGreenCircle()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
-    private func getTopPlayers() {
+    private func setBackgroundFrame() {
         
-        let decoder = JSONDecoder()
-        Alamofire.request("http://private-b31630-tapotssays.apiary-mock.com/topPlayers").responseDecodableObject(decoder: decoder) { (response: DataResponse<[Players]>) in
-            let players = response.result.value
-            if (players != nil) {
-                
-                self.sortedPlayers = Utils.sortPlayers(players: players!)
-                self.TopPlayersCollectionView.reloadSections(IndexSet(integer: 0))
-                self.loadingDialog.removeAnimate()
-                
-                
-            } else {
-                
-                self.loadingDialog.removeAnimate()
-                self.alertDialog = Utils.showAlertDialog(viewController : self, message : "Ha ocurrido un error, intente nuevamente")
-                
-            }
-            
-            
-            
-            
-            
-        }
-        
+        let gradientColorBackground = GradientColor(.diagonal, frame: self.view.frame, colors: [UIColor(named: "black")!, UIColor(named: "darkerBlue")!,UIColor(named: "blueDoots")! ])
+        self.view.backgroundColor = gradientColorBackground
         
     }
     
     
-    private func setBlueCircle() {
+    public func setNavigationBar() {
+        
+        let navigationBarAppearace = UINavigationBar.appearance()
+        
+        navigationBarAppearace.tintColor = UIColor(named: "white")!
+        navigationBarAppearace.barTintColor = UIColor(named: "darkerBlue")!
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor(named: "white")!]
+        
+    }
+    
+    public func setBlueCircle() {
         
         BlueCircle.setBackground(background: UIColor(named: "blueDoots")!)
         BlueCircle.setStartAngle(startAngle: 0)
@@ -80,7 +86,7 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
         
     }
     
-    private func setRedCircle() {
+    public func setRedCircle() {
         
         RedCircle.setBackground(background: UIColor(named: "redDoots")!)
         RedCircle.setStartAngle(startAngle: 25)
@@ -89,16 +95,18 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
         
     }
     
-    private func setYellowCircle() {
+    public func setYellowCircle() {
         
         YellowCircle.setBackground(background: UIColor(named: "yellowDoots")!)
         YellowCircle.setStartAngle(startAngle: 50)
         YellowCircle.setEndAngle(endAngle: 75)
         YellowCircle.setQuaterPosition(quaterPosition:GameConstants.YELLOW_VALUE)
         
+        
+        
     }
     
-    private func setGreenCircle() {
+    public func setGreenCircle() {
         
         GreenCircle.setBackground(background: UIColor(named: "greenDoots")!)
         GreenCircle.setStartAngle(startAngle: 75)
@@ -109,7 +117,7 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
     
     
     
-    private func bounceBlueCircle() {
+    public func bounceBlueCircle() {
         
         self.BlueCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 1,
@@ -128,7 +136,7 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
         
     }
     
-    private func bounceRedCircle() {
+    public func bounceRedCircle() {
         
         self.RedCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 1,
@@ -149,7 +157,7 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
     }
     
     
-    private func bounceGreenCircle() {
+    public func bounceGreenCircle() {
         
         self.GreenCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 1,
@@ -169,7 +177,7 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
         
     }
     
-    private func bounceYellowCircle() {
+    public func bounceYellowCircle() {
         
         self.YellowCircle.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 1.5,
@@ -186,22 +194,6 @@ class TopPlayersViewController: BaseViewController, UICollectionViewDelegate, UI
                         
                         
         })
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.sortedPlayers.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let collectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopPlayersCollectionView", for: indexPath) as! TopPlayerCollectionViewCell
-        
-        let player = sortedPlayers[indexPath.row]
-        collectionViewCell.displayData(PlayerAvatar: player.avatar, PlayerName: player.name, PlayerScore: player.score)
-        
-        return collectionViewCell
-        
         
     }
     

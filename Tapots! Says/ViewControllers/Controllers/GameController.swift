@@ -84,6 +84,7 @@ public class GameController {
         if (color == gameSequence[currentGameElementPosition].getColor()) {
             
             updateGamePosition(gameMode:gameMode)
+            gameViewController.playGoodSound()
             
             
             if (validateRoundEnd(gameMode : gameMode)) {
@@ -102,6 +103,9 @@ public class GameController {
     }
     
     private func userLossLife() {
+        
+        gameViewController.playBadSound()
+        
         
         switch (self.usersLives) {
             

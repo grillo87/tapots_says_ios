@@ -12,6 +12,7 @@
 		5058E2DA2102281900EFEDDB /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5058E2D92102281900EFEDDB /* LoadingViewController.swift */; };
 		5058E2DC2102330B00EFEDDB /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5058E2DB2102330B00EFEDDB /* AlertViewController.swift */; };
 		5058E2DE2102333A00EFEDDB /* BaseDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5058E2DD2102333A00EFEDDB /* BaseDialogViewController.swift */; };
+		5078B1E5210B500900D9576E /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 5078B1E4210B500800D9576E /* sounds */; };
 		50976B8520FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50976B8420FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift */; };
 		50A4372B210622C10028812B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4372A210622C10028812B /* GameController.swift */; };
 		50C46D6B210A65BA0036C4B0 /* FinishGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C46D6A210A65BA0036C4B0 /* FinishGameViewController.swift */; };
@@ -40,6 +41,7 @@
 		5058E2D92102281900EFEDDB /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		5058E2DB2102330B00EFEDDB /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		5058E2DD2102333A00EFEDDB /* BaseDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDialogViewController.swift; sourceTree = "<group>"; };
+		5078B1E4210B500800D9576E /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 		50976B8420FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		50A4372A210622C10028812B /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		50C46D6A210A65BA0036C4B0 /* FinishGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGameViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,75 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5078B1EC210B644400D9576E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				50DE518D20F3B3EA0068C914 /* AppDelegate.swift */,
+				50DE51A720F3E9460068C914 /* BaseViewController.swift */,
+				5058E2DD2102333A00EFEDDB /* BaseDialogViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5078B1ED210B645A00D9576E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5078B1F2210B652200D9576E /* CollectionViewCells */,
+				5078B1F1210B64ED00D9576E /* Controllers */,
+				50DE51A920F3EC700068C914 /* SplashViewController.swift */,
+				50EFCEFE20F643A2008952A3 /* OptionsViewController.swift */,
+				50EFCF0020F6552C008952A3 /* GameModeViewController.swift */,
+				50EFCF0220F65AC8008952A3 /* TopPlayersViewController.swift */,
+				50CA45FE20F7B26A006D297C /* GameViewController.swift */,
+				50C46D6A210A65BA0036C4B0 /* FinishGameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5078B1EE210B648F00D9576E /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				5058E2D92102281900EFEDDB /* LoadingViewController.swift */,
+				5058E2DB2102330B00EFEDDB /* AlertViewController.swift */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		5078B1EF210B64A300D9576E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5006ED5120FD24E3009E496F /* Players.swift */,
+				50DE519F20F3B4C10068C914 /* GameElement.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5078B1F0210B64B200D9576E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				50DE51A120F3B6F60068C914 /* GameConstants.swift */,
+				50DE51B320F414DF0068C914 /* CircleDrawer.swift */,
+				50DE51A320F3B8C10068C914 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5078B1F1210B64ED00D9576E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				50A4372A210622C10028812B /* GameController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5078B1F2210B652200D9576E /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				50976B8420FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
 		50DE518120F3B3EA0068C914 = {
 			isa = PBXGroup;
 			children = (
@@ -110,29 +181,16 @@
 		50DE518C20F3B3EA0068C914 /* Tapots! Says */ = {
 			isa = PBXGroup;
 			children = (
-				50DE518D20F3B3EA0068C914 /* AppDelegate.swift */,
-				50DE51A920F3EC700068C914 /* SplashViewController.swift */,
-				50EFCEFE20F643A2008952A3 /* OptionsViewController.swift */,
-				50EFCF0020F6552C008952A3 /* GameModeViewController.swift */,
-				50EFCF0220F65AC8008952A3 /* TopPlayersViewController.swift */,
-				50CA45FE20F7B26A006D297C /* GameViewController.swift */,
-				50C46D6A210A65BA0036C4B0 /* FinishGameViewController.swift */,
+				5078B1EC210B644400D9576E /* Base */,
+				5078B1ED210B645A00D9576E /* ViewControllers */,
+				5078B1F0210B64B200D9576E /* Utils */,
+				5078B1EF210B64A300D9576E /* Models */,
+				5078B1EE210B648F00D9576E /* Dialogs */,
 				50DE519420F3B3EB0068C914 /* Assets.xcassets */,
 				50EC1EEB2106278D0050659F /* Colors.xcassets */,
 				50DE519620F3B3EB0068C914 /* LaunchScreen.storyboard */,
 				50DE519920F3B3EB0068C914 /* Info.plist */,
-				50DE519F20F3B4C10068C914 /* GameElement.swift */,
-				50DE51A120F3B6F60068C914 /* GameConstants.swift */,
-				50DE51A320F3B8C10068C914 /* Utils.swift */,
-				50DE51A720F3E9460068C914 /* BaseViewController.swift */,
-				5058E2DD2102333A00EFEDDB /* BaseDialogViewController.swift */,
 				50DE519120F3B3EA0068C914 /* Main.storyboard */,
-				50DE51B320F414DF0068C914 /* CircleDrawer.swift */,
-				5006ED5120FD24E3009E496F /* Players.swift */,
-				50976B8420FFD8C2003A5E59 /* TopPlayerCollectionViewCell.swift */,
-				5058E2D92102281900EFEDDB /* LoadingViewController.swift */,
-				5058E2DB2102330B00EFEDDB /* AlertViewController.swift */,
-				50A4372A210622C10028812B /* GameController.swift */,
 			);
 			path = "Tapots! Says";
 			sourceTree = "<group>";
@@ -140,6 +198,7 @@
 		50DE51B020F404A80068C914 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5078B1E4210B500800D9576E /* sounds */,
 				50DE51B120F404CC0068C914 /* Pacifico.ttf */,
 			);
 			path = Resources;
@@ -216,6 +275,7 @@
 			files = (
 				50DE519820F3B3EB0068C914 /* LaunchScreen.storyboard in Resources */,
 				50DE51B220F404CC0068C914 /* Pacifico.ttf in Resources */,
+				5078B1E5210B500900D9576E /* sounds in Resources */,
 				50DE519520F3B3EB0068C914 /* Assets.xcassets in Resources */,
 				50EC1EEC2106278D0050659F /* Colors.xcassets in Resources */,
 				50DE519320F3B3EA0068C914 /* Main.storyboard in Resources */,

@@ -16,13 +16,12 @@ public class GameConstants {
     public static let GREEN_VALUE = 3
     public static let YELLOW_VALUE = 4
     
-    public static let BLUE_SOUND_ROUTE = "sounds/simonblue.mp3"
-    public static let RED_SOUND_ROUTE = "sounds/simonred.mp3"
-    public static let GREEN_SOUND_ROUTE = "sounds/simongreen.mp3"
-    public static let YELLOW_SOUND_ROUTE = "sounds/simonyellow.mp3"
-    
-    public static let GOOD_SOUND_ROUTE = "sounds/good.mp3"
-    public static let FAILURE_SOUND_ROUTE = "sounds/bad.mp3"
+    public static let GOOD_SOUND = URL(fileURLWithPath: Bundle.main.path(forResource: "sounds/good", ofType: "mp3")!)
+    public static let BAD_SOUND = URL(fileURLWithPath: Bundle.main.path(forResource: "sounds/bad", ofType: "mp3")!)
+    public static let BLUE_SOUND = URL(fileURLWithPath: Bundle.main.path(forResource: "sounds/simonblue", ofType: "mp3")!)
+    public static let RED_SOUND = URL(fileURLWithPath: Bundle.main.path(forResource: "sounds/simonred", ofType: "mp3")!)
+    public static let GREEN_SOUND = URL(fileURLWithPath: Bundle.main.path(forResource: "sounds/simongreen", ofType: "mp3")!)
+    public static let YELLOW_SOUND = URL(fileURLWithPath: Bundle.main.path(forResource: "sounds/simonyellow", ofType: "mp3")!)
     
     public static let NORMAL_MODE = 1
     public static let REVERSE_MODE = 2
