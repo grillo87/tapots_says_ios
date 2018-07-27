@@ -1,12 +1,11 @@
 <b>Tapots! Says</b>
 
 <body>
-<b>Demo App developed for iOS, with Swift 4</b></br></br>
+<b>Demo App developed for iOS with Swift 4</b></br></br>
 
 The app is based on my Android App, Tapots! Says, available on Google Play on:</br></br>
 
 <a href="https://play.google.com/store/apps/details?id=com.josegrillo.tapotssays">Google Play Link</a></br></br>
-
 
 This is an example app developed for iOS based on the popular game Simon Say's.</br></br>
 
@@ -16,8 +15,14 @@ The app uses the following pods:</br></br>
 - <a href="https://github.com/Otbivnoe/CodableAlamofire">CodableAlamofire</a></br>
 - <a href="https://github.com/rs/SDWebImage">SDWebImage</a></br></br>
 
-It was developed under the MVC architecture, it has a demo web service API for top players, dialog show and custom views.</br></br>
+It was developed under the MVC architecture, it has a demo web service Top Players View on Apiary, it also has implemented Loading Dialog and Alert Dialog examples.</br>
+The response for the web service example could be found at JSON Data folder. For serialization of JSON objects was used CodableAlamofire.</br>
+For the quarter circles was used custom UIView.</br>
+You could find me at LinkedIn on:</br></b>
 
+<a href="https://www.linkedin.com/in/jos%C3%A9-enrique-grillo-hern%C3%A1ndez-4955645a/?locale=en_US">LinkedIn Profile</a></br></br>
+
+<b>Screenshots</b></br></br>
 <table>
 <tr>
 <td>
